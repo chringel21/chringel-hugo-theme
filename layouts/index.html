@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article class="text-center text-gray-700 dark:text-gray-200">
+  <div class="flex flex-col h-screen -mt-4 sm:-mt-16">
+    <div class="m-auto">
+      {{ with .Site.Params.titleimage }}
+      {{ $image := resources.Get . }}
+          <div style="background-image: url('{{ $image.RelPermalink }}');" class="mx-auto mb-4 rounded-full h-48 w-48 border border-gray-200 bg-cover bg-center"></div>
+      {{ end }}
+      <h1 class="font-light text-5xl text-gray-500 dark:text-gray-200">{{ .Title }}</h1>
+      {{ .Content }}
+      <div class="w-48 m-auto my-4 border-accent-400 border-2 rounded-sm"></div>
+      <div class="flex justify-center space-x-4">
+        {{ range .Site.Menus.social }}
+          <a href="{{ .URL }}" title="{{ .Name }}" class="text-gray-700 dark:text-gray-200 hover:text-accent-400 transition-colors duration-200">
+            {{ $logoName := printf "%s%s" "logo-" (lower .Name) }}
+            {{ partial "icons/ionicons" $logoName }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ if .Site.Params.recentpostsonindex | default true }}
+    <div class="mx-auto mb-10">
+      <svg class="animate-bounce w-6 h-6 text-black dark:text-white cursor-pointer dark:stroke-current" id="bouncing-arrow" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+    {{ end }}
+  </div>
+
+  {{ if .Site.Params.recentpostsonindex | default true }}
+    <div id="featured-post" class="h-8"></div>
+    <div class="container mx-auto w-3/4">
+      <h2 class="text-center font-light text-3xl mt-5">Recent Posts</h2>
+      <div class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"></div>
+      {{ partial "widgets/featured-post-card.html" . }}
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {{ range first 2 (after 1 (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse) }}
+          {{ partial "widgets/post-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</article>
+{{ end }}
