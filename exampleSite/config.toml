@@ -1,4 +1,4 @@
-theme = "hugo-theme-tailwindcss-starter"
+theme = "chringel"
 languageCode = "en-us"
 baseurl = "http://example.com/"
 title = "Hugo Tailwindcss Starter"
@@ -15,6 +15,8 @@ copyright = "Copyright © 2019, Dirk Olbrich, all rights reserved."
     github_banner = true
 
     favicon = "favicon.ico"
+
+    headerTitle = 'chringel@dev: ~/$'
 
 [build]
   writeStats = true
