@@ -2,7 +2,6 @@ const colors = require('tailwindcss/colors')
 const { borderColor, fontWeight, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  important: true,
   darkMode: 'media',
   theme: {
     extend: {
