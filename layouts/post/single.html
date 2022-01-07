@@ -9,7 +9,7 @@
   </div>
   {{ with .Params.featured_image }}
     {{ $image := resources.Get .}}
-    <img src="{{ $image.RelPermalink }}" alt="" class="shadow-lg">
+    <img src="{{ ($image.Resize "x550 webp q100").RelPermalink }}" alt="" class="shadow-lg">
   {{ end }}
   {{ .Content }}
   <hr>
