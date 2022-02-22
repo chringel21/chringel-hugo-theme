@@ -34,4 +34,5 @@
         {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
     {{ end -}}
+    {{ partial "analytics.html" . }}
 </head>
