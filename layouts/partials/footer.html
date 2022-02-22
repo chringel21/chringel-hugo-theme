@@ -12,5 +12,5 @@
   {{ $smoothScrollToNode := resources.Get "js/smoothScrollToNode.js" }}
   {{ $lateJS := slice $smoothScrollToNode | resources.Concat "js/smoothScrollToNode.js" }}
   {{ $lateJS := $lateJS | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $lateJS.Permalink }}" integrity="{{ $lateJS.Data.Integrity }}"></script>
+  <script src="{{ $lateJS.Permalink }}" integrity="{{ $lateJS.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
