@@ -1,14 +1,14 @@
-{{- $fname:=print "themes/chringel/assets/svg/ionicons/" . ".svg" -}}
-{{ if in $fname "logo" }}
+{{ $svg := resources.Get (print "svg/ionicons/" . ".svg") }}
+{{ if in $svg "logo" }}
   <span class="inline-svg h-10 w-10">
     {{- $path:="<path" -}}
     {{- $fill:="<path fill=\"currentColor\"" }}
-    {{ replace (readFile $fname) $path $fill | safeHTML }}
+    {{ replace ($svg.Content) $path $fill | safeHTML }}
   </span>
 {{ else }}
   <span class="inline-svg">
     {{- $path:="<path" -}}
     {{- $fill:="<path fill=\"none\"" -}}
-    {{ replace (readFile $fname) $path $fill | safeHTML }}
+    {{ replace ($svg.Content) $path $fill | safeHTML }}
   </span>
 {{ end }}
