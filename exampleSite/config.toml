@@ -1,25 +1,55 @@
-theme = "chringel"
-themesDir = "../.."
+title = "chringel - Privacy focused theme for Hugo"
 languageCode = "en-us"
 baseurl = "http://example.com/"
-title = "Hugo Tailwindcss Starter"
+theme = "chringel"
+themesDir = "../.."
 
-author = "Dirk Olbrich"
-copyright = "Copyright © 2019, Dirk Olbrich, all rights reserved."
+author = "Christian Engel"
+copyright = "Copyright © 2022, Christian Engel, all rights reserved."
 
-[params]
-    name = "Hugo Tailwindcss Starter"
-    description = "A simple bootstraped theme for Hugo, build with Tailwindcss."
+pluralizelisttitles = false
+paginate = 5
+enableEmoji = true
 
-    github_user = "dirkolbrich"
-    github_repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+[Params]
+    name = "chringel"
+    description = "A privacy focused theme for Hugo"
+    keywords = ['some', 'key', 'words']
+
+    github_user = "chringel21"
+    github_repo = "https://github.com/chringel21/chringel-hugo-theme"
     github_banner = true
 
     favicon = "favicon.ico"
 
+    # Title to be displayed in header
     headerTitle = 'chringel@dev: ~/$'
+    # User image
     titleImage = 'images/index.png'
+    # Copyright text displayed in footer
     footerCopyrightText = 'Christian Engel 2022'
+
+# Isso configuration
+# https://posativ.org/isso/docs/configuration/client/
+[Params.isso]
+  enabled = true
+  data = "https://comments.exmaple.com/"
+  id = "thread-id"
+  css = true
+  lang = "en"
+  replyToSelf = true
+  requireAuthor = true
+  requireEmail = false
+  avatar = true
+  avatar-bg = "#f0f0f0"
+  jsLocation = "https://comments.example.com/js/embed.min.js"
+
+# Umami configuration
+# https://umami.is/docs/install
+[Params.umami]
+  enabled = true
+  websiteId = "1234567-abcd-efgh-0000-abcdefg1234"
+  jsLocation = "https://analytics.example.com/umami.js"
 
 [[menu.social]]
   name = "GitHub"
