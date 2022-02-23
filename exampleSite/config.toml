@@ -1,4 +1,5 @@
 theme = "chringel"
+themesDir = "../.."
 languageCode = "en-us"
 baseurl = "http://example.com/"
 title = "Hugo Tailwindcss Starter"
@@ -17,6 +18,16 @@ copyright = "Copyright © 2019, Dirk Olbrich, all rights reserved."
     favicon = "favicon.ico"
 
     headerTitle = 'chringel@dev: ~/$'
+    titleImage = 'images/index.png'
+    footerCopyrightText = 'Christian Engel 2022'
+
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/chringel21"
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/DeEgge"
 
 [build]
   writeStats = true
