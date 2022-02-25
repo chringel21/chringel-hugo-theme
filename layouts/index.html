@@ -29,7 +29,7 @@
 
   {{ if .Site.Params.recentpostsonindex | default true }}
     <div id="featured-post" class="h-8"></div>
-    <div class="container mx-auto w-3/4">
+    <div class="container mx-auto max-w-4xl">
       <h2 class="text-center font-light text-3xl mt-5">Recent Posts</h2>
       <div class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"></div>
       {{ partial "widgets/featured-post-card.html" . }}
