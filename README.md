@@ -1,4 +1,4 @@
-# chringel - Privacy focused theme for Hugo 🕵️‍♂️
+# chringel - Privacy focused theme for Hugo 🕵️
 
 Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter). Go check it out! :rocket:
 
@@ -44,9 +44,7 @@ cd chringel && npm install
 
 ```toml
 # config.toml
-...
 theme = "chringel-hugo-theme"
-...
 ```
 
 ## Features
