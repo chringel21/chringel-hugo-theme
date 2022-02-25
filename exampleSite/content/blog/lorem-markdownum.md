@@ -2,6 +2,7 @@
 author: Dirk Olbrich
 title: Lorem Markdownum
 date: 2021-01-07
+featured_image: "images/blog/aaron-burden-AXqMy8MSSdk-unsplash.jpg"
 ---
 
 ## Amens nitentior vires
@@ -62,3 +63,7 @@ ait quot nemorum Fames licet, me quam! Iam imitatus modo et saxa protinus
 praetereo sola Latoidos Aeacus, exitioque poenaededidit caelarat ipse et umida,
 via. Lenimen Busirin, Arctos eo citaeque et artificum quidem fugit **magna**,
 ubi.
+
+---
+
+Image: https://unsplash.com/@aaronburden

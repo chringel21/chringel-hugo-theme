@@ -1,13 +1,60 @@
 ---
-author: Dirk Olbrich
+author: Christian Engel
 title: A second Post
 date: 2019-05-14
+featured_image: "images/blog/randy-tarampi-U2eUlPEKIgU-unsplash.jpg"
 ---
 
-A lot more Wise words.
+The quick, brown fox jumps over a lazy dog.
 
-You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
+DJs flock by when MTV ax quiz prog.
 
-Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?
+Junk MTV quiz graced by fox whelps.
 
-Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.
+Bawds jog, flick quartz, vex nymphs.Waltz, bad nymph, for quick jigs vex! 
+
+Fox nymphs grab quick-jived waltz.
+
+Brick quiz whangs jumpy veldt fox.
+
+Bright vixens jump; dozy fowl quack.
+
+Quick wafting zephyrs vex bold Jim.
+
+Quick zephyrs blow, vexing daft Jim.
+
+How quickly daft jumping zebras vex.
+
+Two driven jocks help fax my big quiz.
+
+Quick, Baz, get my woven flax jodhpurs! 
+
+"Now fax quiz Jack!" my brave ghost pled.
+
+Five quacking zephyrs jolt my wax bed.
+
+Flummoxed by job, kvetching W. zaps Iraq.
+
+Cozy sphinx waves quart jug of bad milk.
+
+A very bad quack might jinx zippy fowls.
+
+Few quips galvanized the mock jury box.
+
+Quick brown dogs jump over the lazy fox.
+
+The jay, pig, fox, zebra, and my wolves quack! 
+
+Blowzy red vixens fight for a quick jump.
+
+Joaquin Phoenix was gazed by MTV for luck.
+
+A wizard’s job is to vex chumps quickly in fog.
+
+Watch "Jeopardy!", Alex Trebek's fun TV quiz game.
+
+Woven silk pyjamas exchanged for blue quartz.Brawny gods just
+
+---
+
+Image: https://unsplash.com/@randytarampi
