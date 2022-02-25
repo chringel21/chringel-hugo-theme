@@ -4,10 +4,10 @@
 name = "chringel"
 license = "MIT"
 licenselink = "https://github.com/chringel21/chringel-hugo-theme/blob/main/LICENSE"
-description = "chringel - A lean theme for Hugo"
+description = "chringel - Privacy focused theme for Hugo"
 homepage = "https://github.com/chringel21/chringel-hugo-theme"
-tags = ["Hugo", "Tailwind CSS", "theme", "lean"]
-features = []
+tags = ["Hugo", "Tailwind CSS", "theme", "privacy"]
+features = ["Isso comments", "umami analytics", "SVG icons", "automatic dark mode"]
 min_version = "0.69"
 
 [author]

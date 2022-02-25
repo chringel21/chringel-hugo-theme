@@ -51,6 +51,7 @@ enableEmoji = true
   websiteId = "1234567-abcd-efgh-0000-abcdefg1234"
   jsLocation = "https://analytics.example.com/umami.js"
 
+# Social icons to be displayed on the front page
 [[menu.social]]
   name = "GitHub"
   url = "https://github.com/chringel21"
@@ -59,6 +60,7 @@ enableEmoji = true
   name = "Twitter"
   url = "https://twitter.com/DeEgge"
 
+# To make purging of CSS classes work in production
 [build]
   writeStats = true
 

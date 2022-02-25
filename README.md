@@ -1,8 +1,12 @@
-# chringel - A lean theme for Hugo
+# chringel - Privacy focused theme for Hugo 🕵️‍♂️
 
-Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter).
+Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter). Go check it out! :rocket:
 
-## Prerequisites
+This theme was created with privacy in mind. By default, Disqus and Google Analytics are disabled, but you are free to use them, if you want. Instead this theme comes with configuration options for [Isso](https://posativ.org/isso/) and [umami](https://umami.is/).
+
+## Quickstart
+
+### Prerequisites
 
 Make sure to install `postcss-cli` and `autoprefixer` globally in your environment, as Hugo Pipe’s PostCSS requires it. This is mentioned in the [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/).
 
@@ -20,175 +24,110 @@ Set the `writeStats` option in your Hugo `config` file, so that purging of CSS c
   writeStats = true
 ```
 
-## Basic usage to develop a separate Theme repo
-
-- clone and rename the repo
+### For a new site
 
 ```bash
-git clone https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter new-theme-name
+# Create a new site
+hugo new site my-site
+
+# Change into your themes folder
+cd my-site/themes
+
+# Clone this theme
+git clone https://github.com/chringel21/chringel-hugo-theme.git
+
+# Change into your new theme's folder and install dependencies
+cd chringel && npm install
 ```
 
-- to make that theme your own, switch into the newly created folder, remove the git history from this starter repo and initiate a new git repo
-
-```bash
-cd new-theme-name
-rm -rf .git
-git init
-```
-
-- now install the necessary node packages
-
-```bash
-npm install
-```
-
-- edit the `config.toml` file in `exampleSite/` to reflect the `new-theme-name`
+* Don't forget to edit your `config.toml` to use your new theme
 
 ```toml
-# in config.toml
-theme = "new-theme-name" # your new theme name here
+# config.toml
+...
+theme = "chringel-hugo-theme"
+...
 ```
 
-- start a server to develop with `exampleSite`
+## Features
 
-```bash
-hugo server -s exampleSite --themesDir=../.. --disableFastRender
-```
+* 🌝 /🌚 Automatic dark mode based on device setting
+* 💬 Isso commenting server similar to Disqus ([self-hosted](https://posativ.org/isso/docs/install/))
+* 📈 umami - simple, easy to use, web analytics solution ([self-hosted](https://umami.is/docs/install))
+* 🐦 SVG (social) icons powered by [ionicons](https://ionic.io/ionicons), currently Twitter and Github are available, but more can be downloaded with a simple shell script
+* 🧑‍💻 Syntax highlighting with copy function
 
-## Usage directly within a Hugo repo as a theme package
-
-- start a new Hugo site
-
-```bash
-hugo new site new-site
-```
-
-- switch into the theme folder an clone the starter repo
-
-```bash
-cd new-site/themes
-git clone https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter new-theme-name
-```
-
-- switch into the newly created theme folder, remove the git history from this starter repo and install the node packages
-
-```bash
-cd new-theme-name
-rm -rf .git
-npm install
-```
-
-- edit the `config.toml` file in `new-site/` to reflect the new-theme-name
+## Full `config.toml` example
 
 ```toml
-# in config.toml
-theme = "new-theme-name" # your new theme name here
+title = "chringel - Privacy focused theme for Hugo"
+languageCode = "en-us"
+baseurl = "http://example.com/"
+theme = "chringel"
+themesDir = "../.."
+
+author = "Christian Engel"
+copyright = "Copyright © 2022, Christian Engel, all rights reserved."
+
+pluralizelisttitles = false
+paginate = 5
+enableEmoji = true
+
+[Params]
+    name = "chringel"
+    description = "A privacy focused theme for Hugo"
+    keywords = ['some', 'key', 'words']
+
+    github_user = "chringel21"
+    github_repo = "https://github.com/chringel21/chringel-hugo-theme"
+    github_banner = true
+
+    favicon = "favicon.ico"
+
+    # Title to be displayed in header
+    headerTitle = 'chringel@dev: ~/$'
+    # User image
+    titleImage = 'images/index.png'
+    # Copyright text displayed in footer
+    footerCopyrightText = 'Christian Engel 2022'
+
+# Isso configuration
+# https://posativ.org/isso/docs/configuration/client/
+[Params.isso]
+  enabled = true
+  data = "https://comments.exmaple.com/"
+  id = "thread-id"
+  css = true
+  lang = "en"
+  replyToSelf = true
+  requireAuthor = true
+  requireEmail = false
+  avatar = true
+  avatar-bg = "#f0f0f0"
+  jsLocation = "https://comments.example.com/js/embed.min.js"
+
+# Umami configuration
+# https://umami.is/docs/install
+[Params.umami]
+  enabled = true
+  websiteId = "1234567-abcd-efgh-0000-abcdefg1234"
+  jsLocation = "https://analytics.example.com/umami.js"
+
+# Social icons to be displayed on the front page
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/chringel21"
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/DeEgge"
+
+# To make purging of CSS classes work in production
+[build]
+  writeStats = true
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
 ```
-
-- switch to the root of the new-site repo and start a server to view the index site
-
-```bash
-cd new-site
-hugo server --disableFastRender
-```
-
-Your content should go into `new-site/content`, the development of the site layout is done within `new-site/themes/new-theme-name/layout`.
-
-## Helpers
-
-Included are the following helpers for the development phase (not visible in production):
-
-- `/partials/dev-parameters.html`, which shows basic Hugo page parameters
-- `/partials/dev-size-indicator.html`, which displays a floating circle in the upper right corner to indicate the Tailwind CSS responsive breakpoints
-
-If you don't need any of these helpers anymore, just delete the corresponding line from `/layouts/_default/baseof.html`.
-
-## Deploy to Netlify
-
-If you use this starter theme and want to deploy your site to [Netlify](https://www.netlify.com/), you *MAY* encounter a build error which contains the following line:
-
-```bash
-ERROR {your deploy time here} error: failed to transform resource: POSTCSS: failed to transform "css/styles.css" (text/css): PostCSS not found; install with "npm install postcss-cli". See https://gohugo.io/hugo-pipes/postcss/
-```
-
-That is, Netlify doesn't know the `npm` dependencies of this starter theme yet. For this to fix, please add a `package.json` file to the root of your repo with the content:
-
-```json
-{
-    "name": "my-site",
-    "version": "0.0.1",
-    "description": "that is my-site",
-    "repository": "https://github.com/you/my-site",
-    "license": "MIT",
-    "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^3.1.3",
-        "@tailwindcss/typography": "^0.3.1",
-        "autoprefixer": "^10.2.0",
-        "postcss": "^8.2.3",
-        "postcss-cli": "^8.3.1",
-        "postcss-import": "^14.0.0",
-        "tailwindcss": "^2.0.2"
-    },
-    "browserslist": [
-        "last 1 version",
-        "> 1%",
-        "maintained node versions",
-        "not dead"
-    ]
-}
-```
-
-This introduces the dependencies Tailwind CSS and PostCSS need, Netlify will run the installation automatically on deploy.
-
-### Environment variables
-
-To make the distinction between `development` and `production` environments work, add an environment variable `HUGO_ENV = "production"` to your site settings under `Settings` → `Build & deploy` → `Environment`.
-
-Or use a `netlify.toml` for a [file-based configuration](https://docs.netlify.com/configure-builds/file-based-configuration/).
-
-## How does that work anyway?
-
-Within `postcss.config.js` a `purgecss` function is defined, which is only called based on the environment variable `HUGO_ENVIRONMENT === 'production'`.
-
-```js
-const themeDir = __dirname + '/../../';
-
-const purgecss = require('@fullhuman/postcss-purgecss')({
-    // see https://gohugo.io/hugo-pipes/postprocess/#css-purging-with-postcss
-    content: ['./hugo_stats.json'],
-    defaultExtractor: (content) => {
-        let els = JSON.parse(content).htmlElements;
-        return els.tags.concat(els.classes, els.ids);
-    }
-})
-
-module.exports = {
-    plugins: [
-        require('postcss-import')({
-            path: [themeDir]
-            }), 
-        require('tailwindcss')(themeDir + 'assets/css/tailwind.config.js'),
-        require('autoprefixer')({
-            path: [themeDir],
-            grid: true
-        }),
-        ...(process.env.HUGO_ENVIRONMENT === 'production' ? [purgecss] : [])
-    ]
-}
-```
-
-During the build process Hugo Pipes checks this variable too and build the `styles.css` with some additional minification. This snippet is located in `/layouts/partials/head.html`.
-
-```html
-{{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-{{ if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-{{ else }}
-    {{ $styles := $styles| minify | fingerprint | resources.PostProcess }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-{{ end }}
-```
-
-## Reference
-
-Documentation for Hugo's [PostCSS setup](https://gohugo.io/hugo-pipes/postprocess/).
