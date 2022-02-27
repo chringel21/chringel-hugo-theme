@@ -2,7 +2,12 @@ const colors = require('tailwindcss/colors')
 const { borderColor, fontWeight, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  darkMode: 'media',
+  content: [
+    './themes/**/layouts/**/*.html',
+    './themes/**/assets/js/**/*.js',
+    './layouts/**/*.html',
+    './assets/js/**/*.js',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -47,7 +52,7 @@ module.exports = {
     colors: {
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       accent: colors.green
     },
     borderColor: theme => ({
@@ -74,14 +79,10 @@ module.exports = {
       bounce: 'bounce 1s infinite'
     }
   },
-  variants: {
-    extend: {
-      typography: ['dark'],
-      opacity: ['disabled'],
-      cursor: ['disabled']
-    }
-  },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp')
   ]
 }
