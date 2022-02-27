@@ -1,8 +1,254 @@
-/* Tailwind base - put variables under: tailwind.config.js */
-@import "node_modules/tailwindcss/base";
-/* Tailwind component classes registered by plugins*/
-@import "node_modules/tailwindcss/components";
-/* Site Specific */
-@import "assets/css/site";
-/* Tailwind's utility classes - generated based on config file */
-@import "node_modules/tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  @font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Comfortaa-Light.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Comfortaa-SemiBold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Comfortaa-Medium.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Comfortaa-SemiBold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Comfortaa-Bold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Thin.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url(/fonts/FiraSans-ThinItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/fonts/FiraSans-ExtraLight.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/fonts/FiraSans-ExtraLightItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Light.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/FiraSans-LightItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Regular.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Italic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Medium.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/FiraSans-MediumItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/FiraSans-SemiBold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/FiraSans-SemiBoldItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Bold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/FiraSans-BoldItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/fonts/FiraSans-ExtraBold.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/fonts/FiraSans-ExtraBoldItalic.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/fonts/FiraSans-Black.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/fonts/FiraSans-BlackItalic.ttf) format('truetype');
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+  
+  .prose a {
+    @apply no-underline transition-colors duration-200;
+  }
+  
+  .prose a:hover {
+    @apply no-underline transition-colors duration-200;
+  }
+  
+  .prose pre {
+    @apply mt-0;
+  }
+  
+  body {
+    @apply font-body;
+  }
+  
+  .no-prose li::before {
+    background-color: unset !important;
+  }
+  
+  .pagination a {
+    @apply mx-2 rounded-md text-base border border-gray-300 w-1/2 p-2 items-center justify-center hover:no-underline text-gray-500
+  }
+  
+  .inline-svg {
+    @apply inline-block relative h-5 w-5 top-1;
+  }
+  
+  .isso-comment-footer {
+    @apply flex flex-row;
+  }
+}
+
+@layer components {
+/* Shamelessly ripped from https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/ */
+  .copy-code-button {
+    @apply border rounded bg-white border-gray-900 block ml-auto mr-0;
+    /* Until we get a new version of Tailwind that supports 
+    @apply with complex classes, including responsive and pseudo-class variants */
+    /* @apply rounded-sm sm */
+    margin-bottom: -2px;
+    padding: 3px 8px;
+    font-size: 0.875rem;
+  }
+  
+  .copy-code-button:hover {
+    @apply cursor-pointer bg-gray-50;
+  }
+  
+  .copy-code-button:focus {
+    /* Avoid an ugly focus outline on click in Chrome,
+       but darken the button for accessibility.
+       See https://stackoverflow.com/a/25298082/1481479 */
+    @apply outline-none bg-gray-100;
+  }
+  
+  .copy-code-button:active {
+    @apply bg-gray-200;
+  }
+}
