@@ -2,6 +2,8 @@
 
 Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter). Go check it out! :rocket:
 
+![chringel](https://user-images.githubusercontent.com/6780575/155966743-3c1a3a47-d6e8-42b9-97e4-d862e8edb1e3.png)
+
 This theme was created with privacy in mind. By default, Disqus and Google Analytics are disabled, but you are free to use them, if you want. Instead this theme comes with configuration options for [Isso](https://posativ.org/isso/) and [umami](https://umami.is/).
 
 ## Quickstart
@@ -11,6 +13,7 @@ This theme was created with privacy in mind. By default, Disqus and Google Analy
 Make sure to install `postcss-cli` and `autoprefixer` globally in your environment, as Hugo Pipe’s PostCSS requires it. This is mentioned in the [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/).
 
 ```bash
+
 npm install -g postcss-cli
 npm install -g autoprefixer
 ```
