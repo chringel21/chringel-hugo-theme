@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>{{ block "title" . }}
     {{- .Title }} - {{ .Site.Title -}}
     {{ end }}</title>
@@ -19,6 +19,11 @@
     {{- if .Params.Author -}}
       <meta name="author" content="{{ .Params.Author }}" />
     {{ end -}}
+    {{ if eq (getenv "HUGO_ENV") "production" }}
+    <meta name="robots" content="index,follow">
+    {{ else }}
+    <meta name="robots" content="noindex,nofollow">
+    {{ end }}
     {{ hugo.Generator }}
 
     {{ template "_internal/opengraph.html" . }}
