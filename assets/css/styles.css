@@ -203,6 +203,11 @@
   .prose pre {
     @apply mt-0;
   }
+
+  .prose code::before, .prose code::after {
+    content: none;
+  }
+  
   
   body {
     @apply font-body;
