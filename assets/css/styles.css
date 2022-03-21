@@ -208,7 +208,6 @@
     content: none;
   }
   
-  
   body {
     @apply font-body;
   }
@@ -255,5 +254,13 @@
   
   .copy-code-button:active {
     @apply bg-gray-200;
+  }
+
+  .link {
+    @apply opacity-0 ml-1 align-middle;
+  }
+
+  .link-owner:hover .link {
+    @apply opacity-90 transition ease-in-out delay-150 duration-300;
   }
 }
