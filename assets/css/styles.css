@@ -227,10 +227,8 @@
   .isso-comment-footer {
     @apply flex flex-row;
   }
-}
 
-@layer components {
-/* Shamelessly ripped from https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/ */
+  /* Shamelessly ripped from https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/ */
   .copy-code-button {
     @apply border rounded bg-white border-gray-900 block ml-auto mr-0;
     /* Until we get a new version of Tailwind that supports 
@@ -256,11 +254,11 @@
     @apply bg-gray-200;
   }
 
-  .link {
-    @apply opacity-0 ml-1 align-middle;
+  .link-owner:hover > .link {
+    @apply opacity-90 transition ease-in-out delay-150 duration-300;
   }
 
-  .link-owner:hover .link {
-    @apply opacity-90 transition ease-in-out delay-150 duration-300;
+  .link {
+    @apply opacity-0 ml-1 align-middle;
   }
 }
