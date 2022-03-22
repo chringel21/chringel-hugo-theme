@@ -1,12 +1,19 @@
-const colors = require('tailwindcss/colors')
-const { borderColor, fontWeight, fontFamily } = require('tailwindcss/defaultTheme')
+const themeDir = __dirname + "/../../";
+const colors = require("tailwindcss/colors");
+const {
+  borderColor,
+  fontWeight,
+  fontFamily,
+} = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    "./themes/**/layouts/**/*.html",
-    "./themes/**/assets/js/**/*.js",
-    "./layouts/**/*.html",
-    "./assets/js/**/*.js",
+    themeDir + "layouts/**/*.html",
+    themeDir + "assets/js/**/*.js",
+    "layouts/**/*.html",
+    "assets/js/**/*.js",
+    "exampleSite/layouts/**/*.html",
+    "exampleSite/assets/js/**/*.js",
   ],
   theme: {
     extend: {
