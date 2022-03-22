@@ -1,15 +1,25 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
 name = "chringel"
 license = "MIT"
 licenselink = "https://github.com/chringel21/chringel-hugo-theme/blob/main/LICENSE"
-description = "chringel - Privacy focused theme for Hugo"
+description = "chringel - Privacy focused theme for Hugo using TailwindCSS"
+
 homepage = "https://github.com/chringel21/chringel-hugo-theme"
-tags = ["Hugo", "Tailwind CSS", "theme", "privacy"]
-features = ["Isso comments", "umami analytics", "SVG icons", "automatic dark mode"]
-min_version = "0.69"
+
+demosite = "https://chringel.dev"
+
+tags = ["Blog", "Hugo", "Tailwind CSS", "theme", "privacy"]
+features = ["Isso comments", "umami analytics", "SVG icons", "automatic dark mode", "deeplinks"]
 
 [author]
   name = "Christian Engel"
   homepage = "https://github.com/chringel21/"
+
+[original]
+  author = "Dirk Olbrich"
+  homepage = "https://github.com/dirkolbrich"
+  repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min_version = "0.69"
