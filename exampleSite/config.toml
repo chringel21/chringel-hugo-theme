@@ -1,7 +1,7 @@
 title = "chringel - Privacy focused theme for Hugo"
 languageCode = "en-us"
-baseurl = "https://chringel21.github.io/chringel-theme-hugo/"
-theme = "chringel"
+baseurl = "https://chringel21.github.io/chringel-hugo-theme"
+theme = "chringel-hugo-theme"
 themesDir = "../.."
 
 author = "Christian Engel"
