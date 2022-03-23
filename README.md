@@ -57,6 +57,7 @@ theme = "chringel-hugo-theme"
 * 📈 umami - simple, easy to use, web analytics solution ([self-hosted](https://umami.is/docs/install))
 * 🐦 SVG (social) icons powered by [ionicons](https://ionic.io/ionicons), currently Twitter and Github are available, but more can be downloaded with a simple shell script
 * 🧑‍💻 Syntax highlighting with copy function
+* 🔗 Deeplinks to headings in a blog post
 
 ## Full `config.toml` example
 
