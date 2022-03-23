@@ -11,6 +11,9 @@ pluralizelisttitles = false
 paginate = 5
 enableEmoji = true
 
+RelativeURLs = true
+CanonifyURLs = true
+
 [Params]
     name = "chringel"
     description = "A privacy focused theme for Hugo"
