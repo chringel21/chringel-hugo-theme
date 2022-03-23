@@ -1,6 +1,6 @@
 title = "chringel - Privacy focused theme for Hugo"
 languageCode = "en-us"
-baseurl = "http://example.com/"
+baseurl = "https://chringel21.github.io/chringel-theme-hugo/"
 theme = "chringel"
 themesDir = "../.."
 
