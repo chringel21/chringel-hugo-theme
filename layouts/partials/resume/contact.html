@@ -1,0 +1,54 @@
+{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
+{{ with $cv.basics }}
+<section class="mt-8 first:mt-0">
+
+  <!-- To keep in the same column -->
+  <div class="break-inside-avoid">
+
+    <h2 class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal">
+      CONTACT
+    </h2>
+
+    <section class="mb-4.5 break-inside-avoid">
+      <ul class="list-inside pr-7">
+        {{ with .url }}
+        <li class="mt-1.5 leading-resume__normal text-gray-700 text-resume__md">
+          <a href="//webpraktikos.com" class="group">
+            {{ . }}
+            <span class="inline-block text-gray-400 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+          </a>
+        </li>
+        {{ end }}
+        {{ with .location }}
+          <li class="mt-1.5 leading-resume__normal text-gray-700 text-resume__md">
+            {{ partial "resume/location.html" (dict "context" . "site" $.Site) }}
+          </li>
+        {{ end }}
+        {{ with .email }}
+          <li class="mt-1.5 leading-resume__normal text-gray-700 text-resume__md">
+            {{ . }}
+          </li>
+        {{ end }}
+        {{ with .phone }}
+          <li class="mt-1.5 leading-resume__normal text-gray-700 text-resume__md">
+            {{ . }}
+          </li>
+        {{ end }}
+        {{ with .profiles }}
+          {{ range .}}
+            <li class="mt-1.5 leading-resume__normal text-gray-700 text-resume__md">
+              <a href="{{ .url }}" class="group">
+                {{ $logoName := printf "%s%s" "logo-" (lower .network) }}
+                {{ partial "icons/ionicons" (dict "logoname" $logoName "size" 5) }}{{ .username }}
+                <span class="inline-block text-gray-400 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+              </a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+  </div>
+
+</section>
+{{ end }}

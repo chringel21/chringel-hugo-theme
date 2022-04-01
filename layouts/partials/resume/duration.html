@@ -1,0 +1,10 @@
+{{ $format := .format }}
+<span>{{ dateFormat $format .context.startDate }}</span>
+<span> - </span>
+<span>
+  {{ with .context.endDate }}
+    {{ dateFormat $format . }}
+  {{ else }}
+    {{ "present" }}
+  {{ end }}
+</span>

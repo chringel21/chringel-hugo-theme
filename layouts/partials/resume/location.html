@@ -1,0 +1,18 @@
+{{ $location := .context }}
+{{ with $location.address }}
+  {{ . }}
+{{ end }}
+{{ with $location.postalCode }}
+<br>
+  {{ . }}
+{{ end }}
+{{ with $location.city }}
+  {{ . }}
+{{ end }}
+{{ with $location.region }}
+<br>
+  {{ . }}
+{{ end }}
+{{ with $location.countryCode }}
+  {{ . }}
+{{ end }}

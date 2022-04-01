@@ -1,0 +1,30 @@
+{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
+{{ with $cv.education }}
+  <section class="mt-8 first:mt-0">
+
+    <!-- To keep in the same column -->
+    <div class="break-inside-avoid">
+
+      <h2 class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal">
+        EDUCATION
+      </h2>
+
+      {{ range . }}
+        <section class="mb-4.5 break-inside-avoid">
+          <header>
+            {{ with .institution}}
+            <h3 class="text-resume__lg font-semibold text-gray-700 leading-resume__snugish">
+              {{ . }}
+            </h3>
+            {{ end }}
+            <p class="leading-resume__normal text-resume__md text-gray-500 font-normal">
+              {{ partial "resume/duration.html" (dict "context" . "site" $.Site "format" "2006") }} | {{ printf "%s's Degree in %s" .studyType .area }}
+            </p>
+          </header>
+        </section>
+      {{ end }}
+
+    </div>
+
+  </section>
+{{ end }}

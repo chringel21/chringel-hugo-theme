@@ -1,0 +1,46 @@
+{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
+{{ with $cv.work }}
+  <section class="mt-8 first:mt-0">
+    
+    <!-- To keep in the same column -->
+    <div class="break-inside-avoid">
+      
+      <h2 class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal">
+        EXPERIENCE
+      </h2>
+      
+      {{ range . }}
+        <section class="mb-4.5 break-inside-avoid">
+          <header>
+            <h3 class="text-resume__lg font-semibold text-gray-700 leading-resume__snugish">
+              {{ if and .name .url }}
+                <a href="{{ .url }}">{{ .name }}<span class="inline-block text-gray-400 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span></a>
+              {{ else }}
+                {{ .name }}
+              </h3>
+            {{ end }}
+            <p class="leading-resume__normal text-resume__md text-gray-500 font-normal">
+              {{ partial "resume/duration.html" (dict "context" . "site" $.Site "format" "January 2006") }} | {{ .position }}
+            </p>
+          </header>
+          {{ with .summary }}
+            <p class="mt-2.1 text-resume__md text-gray-700 leading-resume__normal">
+              {{ . }}
+            </p>
+          {{ end }}
+          {{ with .highlights }}
+            <ul>
+              {{ range . }}
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                {{ . }}
+              </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </section>
+      {{ end }}
+
+    </div>
+  </section>
+{{ end }}
