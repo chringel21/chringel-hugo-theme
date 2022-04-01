@@ -3,7 +3,7 @@
   <h1>{{ .Title }}</h1>
   <div>
     <span class="text-gray-400">
-      {{ partial "icons/ionicons" "time-outline" }}
+      {{ partial "icons/ionicons" (dict "logoname" "time-outline" "size" 5) }}
       {{ .ReadingTime }} minute read
     </span>
   </div>
@@ -15,14 +15,14 @@
   <hr>
   <div class="pb-2 text-gray-500">
     <span class="font-bold">
-      {{ partial "icons/ionicons" "calendar-outline" }}
+      {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
         Posted:
     </span> {{ .PublishDate.Format "January 2, 2006" }}
   </div>
     {{ with .Params.categories }}
   <div class="pb-2 text-gray-500">
     <span class="font-bold">
-      {{ partial "icons/ionicons" "folder-open-outline" }}
+      {{ partial "icons/ionicons" (dict "logoname" "folder-open-outline" "size" 5) }}
       Categories:
     </span>
     {{ range $idx, $category := . }}
@@ -34,7 +34,7 @@
 {{ with .Params.tags }}
   <div class="pb-2 text-gray-500">
     <span class="font-bold">
-      {{ partial "icons/ionicons" "pricetags-outline" }}
+      {{ partial "icons/ionicons" (dict "logoname" "pricetags-outline" "size" 5) }}
       Tags:
     </span>
     {{ range $idx, $tag := . }}

@@ -1,6 +1,7 @@
-{{ $svg := resources.Get (print "svg/ionicons/" . ".svg") }}
+{{ $svg := resources.Get (print "svg/ionicons/" .logoname ".svg") }}
+{{ $size := .size | default 10 }}
 {{ if in $svg "logo" }}
-  <span class="inline-svg h-10 w-10">
+  <span class="inline-svg h-{{ $size }} w-{{ $size }}">
     {{- $path:="<path" -}}
     {{- $fill:="<path fill=\"currentColor\"" }}
     {{ replace ($svg.Content) $path $fill | safeHTML }}
