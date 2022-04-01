@@ -1,0 +1,79 @@
+@import "assets/css/firasans.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@media print {
+  @page {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    margin-left: 0in;
+    margin-right: 0in;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: black !important;
+  }
+
+  .page {
+    padding: theme(spacing.16) theme(spacing.16) !important;
+  }
+
+  .initial {
+    color: transparent !important;
+    text-shadow: 0 0 0 #fff !important;
+  }
+
+  h1, h2, h3, p, li {
+    color: black !important;
+  }
+
+  html {
+    font-size: 12.288px !important;
+  }
+}
+
+.resume {
+  font-size: 13.176471px;
+}
+
+.resume h1, h2, h3, h4, h5, h6 {
+  @apply font-body;
+}
+
+.resume .border-inset {
+  @apply shadow-1-bottom;
+}
+
+@screen sm {
+  .resume {
+    font-size: calc( 13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640) );
+  }
+}
+
+@screen md {
+  .resume {
+    font-size: calc( 12.288px + (16 - 12.288) * (100vw - 811px) / (1051 - 811) );
+  }
+}
+
+@screen lg {
+  .resume {
+    font-size: 16px;
+  }
+}
+
+.resume .initials-container {
+  min-width: 2.31rem;
+}
+
+body .icon-parent::before {
+  content: "A";
+  width: 0px;
+  visibility: hidden;
+  display: inline-block;
+}
