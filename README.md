@@ -58,6 +58,7 @@ theme = "chringel-hugo-theme"
 * 🐦 SVG (social) icons powered by [ionicons](https://ionic.io/ionicons), currently Twitter and Github are available, but more can be downloaded with a simple shell script
 * 🧑‍💻 Syntax highlighting with copy function
 * 🔗 Deeplinks to headings in a blog post
+* 📄 Resume from JSON data based on [JsonResume schema](https://jsonresume.org/schema/)
 
 ## Full `config.toml` example
 
