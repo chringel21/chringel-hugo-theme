@@ -3,7 +3,7 @@
   <p>&copy; {{ .Site.Params.footerCopyrightText }}</p>
   <div class="hidden"></div>
 </footer>
-{{ if or (findRE "<pre" .Content 1) (eq .Section "post" ) }}
+{{ if or (findRE "<pre" .Content 1) (eq .Section "post" ) (eq .Section "blog" ) }}
   {{ $functionsScriptPath := "js/functions.js" }}
   {{ $functions := resources.Get $functionsScriptPath | resources.ExecuteAsTemplate $functionsScriptPath . }}
 
