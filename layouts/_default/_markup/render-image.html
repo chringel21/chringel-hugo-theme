@@ -1,7 +1,7 @@
 {{ if .Title }}
   <figure>
     <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
-    <figcaption>{{ .Title }}</figcaption>
+    <figcaption class="text-sm italic">{{ .Title | $.Page.RenderString }}</figcaption>
   </figure>
 {{ else }}
   <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
