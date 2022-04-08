@@ -17,10 +17,19 @@
     @apply mt-0;
   }
 
+  .prose pre>code {
+    background-color: inherit;
+    border-radius: inherit;
+    padding: unset;
+    font-weight: inherit;
+  }
   .prose code::before, .prose code::after {
     content: none;
   }
-  
+
+  .prose code {
+    @apply bg-gray-200 dark:bg-gray-700 rounded-md p-1 font-light;
+  }
   body {
     @apply font-body;
   }
