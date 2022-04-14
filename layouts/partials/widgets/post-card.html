@@ -14,7 +14,7 @@
     </div>
     <div class="p-5">
       <a href="{{ $permalink }}">
-        <h5 class="text-gray-900 dark:text-white font-bold text-2xl tracking-tight mb-2">{{ .Title }}</h5>
+        <h3 class="text-gray-900 dark:text-white font-bold text-2xl tracking-tight mb-2">{{ .Title }}</h3>
       </a>
       <p class="text-gray-500 text-sm">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</p>
       <p class="font-normal text-gray-700 dark:text-gray-200 mb-3">{{ .Description }}</p>
