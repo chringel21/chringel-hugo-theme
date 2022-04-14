@@ -5,7 +5,7 @@
     {{ if (isset .Params "featured_image") }}
     {{ $image := resources.Get .Params.featured_image }}
       <a href="{{ $permalink }}">
-        <img src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}" alt="" class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover">
+        <img src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}" width="750" height="318" alt="" class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover">
       </a>
     {{ else }}
       <a href="{{ $permalink }}">

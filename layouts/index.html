@@ -4,7 +4,7 @@
     <div class="m-auto">
       {{ with .Site.Params.titleimage }}
       {{ $image := resources.Get . }}
-          <img src="{{ ($image.Fit "200x200 webp").RelPermalink }}" alt="" class="mx-auto mb-2 rounded-full h-48 w-48 object-cover border border-gray-200">
+          <img src="{{ ($image.Fit "200x200 webp").RelPermalink }}" width="200" height="200" alt="" class="mx-auto mb-2 rounded-full h-48 w-48 object-cover border border-gray-200">
       {{ end }}
       <h1 class="font-light text-5xl text-gray-500 dark:text-gray-200">{{ .Title }}</h1>
       {{ .Content }}
