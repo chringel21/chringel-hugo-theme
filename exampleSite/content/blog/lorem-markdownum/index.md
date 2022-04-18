@@ -2,7 +2,9 @@
 author: Dirk Olbrich
 title: Lorem Markdownum
 date: 2021-01-07
-featured_image: "images/blog/aaron-burden-AXqMy8MSSdk-unsplash.jpg"
+cover:
+  src: "images/aaron-burden-AXqMy8MSSdk-unsplash.jpg"
+  caption: Aaron Burden
 ---
 
 ## Amens nitentior vires
