@@ -7,9 +7,14 @@
       {{ .ReadingTime }} minute read
     </span>
   </div>
-  {{ with .Params.featured_image }}
-    {{ $image := resources.Get .}}
-    <img src="{{ ($image.Resize "x550 webp q100").RelPermalink }}" alt="" class="shadow-lg">
+  {{ with .Params.cover }}
+    {{ $image := $.Page.Resources.GetMatch .src }}
+    <figure>
+      <img src="{{ ($image.Resize "x550 webp q100").RelPermalink }}" alt="{{ cond (isset . "caption") .caption $.Page.Title }}" loading="lazy" class="shadow-lg">
+      {{ with .caption }}
+        <figcaption class="text-sm italic">{{ . | $.Page.RenderString }}</figcaption>
+      {{ end }}
+    </figure>
   {{ end }}
   {{ .Content }}
   <hr>

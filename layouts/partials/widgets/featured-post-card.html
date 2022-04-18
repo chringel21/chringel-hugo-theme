@@ -2,10 +2,10 @@
 {{ $permalink := .Permalink }}
 <div class="grid gap-0 md:grid-cols-3 grid-cols-1 bg-white dark:bg-gray-600 shadow-sm border-2 border-gray-200 rounded-lg mb-5 md:h-80 hover:shadow-xl transition-shadow">
   <div class="md:col-span-2 col-span-1">
-    {{ if (isset .Params "featured_image") }}
-    {{ $image := resources.Get .Params.featured_image }}
+    {{ if (isset .Params "cover") }}
+      {{ $image := .Resources.GetMatch .Params.cover.src }}
       <a href="{{ $permalink }}" aria-label="{{ .Title }}">
-        <img src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}" width="750" height="318" alt="" class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover">
+        <img src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}" width="750" height="318" alt="{{ cond (isset .Params.cover "caption") .Params.cover.caption .Title }}" class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover">
       </a>
     {{ else }}
       <a href="{{ $permalink }}">
