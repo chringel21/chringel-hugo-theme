@@ -50,6 +50,14 @@ cd chringel && npm install
 theme = "chringel-hugo-theme"
 ```
 
+### Create a new post
+
+Included is an [`archetype`](./archetypes/post-bundle/) to help you get started with creating content. It's a [post bundle](https://gohugo.io/content-management/page-bundles/#leaf-bundles). Create it with:
+
+```shell
+hugo new --kind post-bundle post/my-post
+```
+
 ## Features
 
 * 🌝 /🌚 Automatic dark mode based on device setting
