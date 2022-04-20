@@ -28,7 +28,11 @@
     text-shadow: 0 0 0 #fff !important;
   }
 
-  h1, h2, h3, p, li {
+  h1,
+  h2,
+  h3,
+  p,
+  li {
     color: black !important;
   }
 
@@ -41,7 +45,12 @@
   font-size: 13.176471px;
 }
 
-.resume h1, h2, h3, h4, h5, h6 {
+.resume h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-body;
 }
 
@@ -51,13 +60,15 @@
 
 @screen sm {
   .resume {
-    font-size: calc( 13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640) );
+    font-size: calc(
+      13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640)
+    );
   }
 }
 
 @screen md {
   .resume {
-    font-size: calc( 12.288px + (16 - 12.288) * (100vw - 811px) / (1051 - 811) );
+    font-size: calc(12.288px + (16 - 12.288) * (100vw - 811px) / (1051 - 811));
   }
 }
 

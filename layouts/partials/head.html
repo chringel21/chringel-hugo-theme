@@ -1,43 +1,85 @@
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{{ block "title" . }}
-    {{- .Title }} - {{ .Site.Title -}}
-    {{ end }}</title>
-    {{- if .Description -}}
-      <meta name="description" content="{{ .Description | safeHTML }}" />
-    {{ else if .Site.Params.description }}
-      <meta name="description" content="{{ .Site.Params.Description | safeHTML }}" />
-    {{- end -}}
-    {{- if .Keywords -}}
-      {{ $length := len .Keywords | add -1 -}}
-        <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
-    {{ else if .Site.Params.keywords }}
-      {{ $length := len .Site.Params.keywords | add -1 -}}
-        <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
-    {{- end -}}
-    {{- if .Params.Author -}}
-      <meta name="author" content="{{ .Params.Author }}" />
-    {{ end -}}
-    {{ if or (hugo.IsProduction) (ne .Type "resume") }}
-    <meta name="robots" content="index,follow">
-    {{ else }}
-    <meta name="robots" content="noindex,nofollow">
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <title>
+    {{ block "title" . }}
+      {{- .Title }} -
+      {{ .Site.Title -}}
     {{ end }}
-    {{ hugo.Generator }}
+  </title>
+  {{- if .Description -}}
+    <meta name="description" content="{{ .Description | safeHTML }}" />
+  {{ else if .Site.Params.description }}
+    <meta
+      name="description"
+      content="{{ .Site.Params.Description | safeHTML }}"
+    />
+  {{- end -}}
+  {{- if .Keywords -}}
+    {{ $length := len .Keywords | add -1 -}}
+    <meta
+      name="keywords"
+      content="{{ range $index, $element := .Keywords }}
+        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
+      {{ end }}"
+    />
+  {{ else if .Site.Params.keywords }}
+    {{ $length := len .Site.Params.keywords | add -1 -}}
+    <meta
+      name="keywords"
+      content="{{ range $index, $element := .Site.Params.keywords }}
+        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
+      {{ end }}"
+    />
+  {{- end -}}
+  {{- if .Params.Author -}}
+    <meta name="author" content="{{ .Params.Author }}" />
+  {{ end -}}
+  {{ if or (hugo.IsProduction) (ne .Type "resume") }}
+    <meta name="robots" content="index,follow" />
+  {{ else }}
+    <meta name="robots" content="noindex,nofollow" />
+  {{ end }}
+  {{ hugo.Generator }}
 
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    <link rel="preload" href="/fonts/Comfortaa-Light.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/FiraSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/fonts/Comfortaa-Bold.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="canonical" href="{{ .Permalink }}">
-    {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
-    {{- if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-    {{ else }}
-        {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
-    {{ end -}}
-    {{ partial "analytics.html" . }}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  <link
+    rel="preload"
+    href="/fonts/Comfortaa-Light.ttf"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/FiraSans-Regular.ttf"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/Comfortaa-Bold.ttf"
+    as="font"
+    type="font/ttf"
+    crossorigin
+  />
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+  {{- if .Site.IsServer }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+  {{ else }}
+    {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
+    <link
+      rel="stylesheet"
+      href="{{ $styles.Permalink }}"
+      integrity="{{ $styles.Data.Integrity }}"
+      crossorigin="anonymous"
+    />
+  {{ end -}}
+  {{ partial "analytics.html" . }}
 </head>

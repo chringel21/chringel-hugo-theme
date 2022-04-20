@@ -1,51 +1,64 @@
 {{ define "main" }}
-<article class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark">
-  <h1>{{ .Title }}</h1>
-  <div>
-    <span class="text-gray-400">
-      {{ partial "icons/ionicons" (dict "logoname" "time-outline" "size" 5) }}
-      {{ .ReadingTime }} minute read
-    </span>
-  </div>
-  {{ with .Params.cover }}
-    {{ $image := $.Page.Resources.GetMatch .src }}
-    <figure>
-      <img src="{{ ($image.Resize "x550 webp q100").RelPermalink }}" alt="{{ cond (isset . "caption") .caption $.Page.Title }}" loading="lazy" class="shadow-lg">
-      {{ with .caption }}
-        <figcaption class="text-sm italic">{{ . | $.Page.RenderString }}</figcaption>
-      {{ end }}
-    </figure>
-  {{ end }}
-  {{ .Content }}
-  <hr>
-  <div class="pb-2 text-gray-500">
-    <span class="font-bold">
-      {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
+  <article
+    class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
+  >
+    <h1>{{ .Title }}</h1>
+    <div>
+      <span class="text-gray-400">
+        {{ partial "icons/ionicons" (dict "logoname" "time-outline" "size" 5) }}
+        {{ .ReadingTime }} minute read
+      </span>
+    </div>
+    {{ with .Params.cover }}
+      {{ $image := $.Page.Resources.GetMatch .src }}
+      <figure>
+        <img
+          src="{{ ($image.Resize "x550 webp q100").RelPermalink }}"
+          alt="{{ cond (isset . "caption") .caption $.Page.Title }}"
+          loading="lazy"
+          class="shadow-lg"
+        />
+        {{ with .caption }}
+          <figcaption class="text-sm italic">
+            {{ . | $.Page.RenderString }}
+          </figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+    {{ .Content }}
+    <hr />
+    <div class="pb-2 text-gray-500">
+      <span class="font-bold">
+        {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
         Posted:
-    </span> {{ .PublishDate.Format "January 2, 2006" }}
-  </div>
+      </span>
+      {{ .PublishDate.Format "January 2, 2006" }}
+    </div>
     {{ with .Params.categories }}
-  <div class="pb-2 text-gray-500">
-    <span class="font-bold">
-      {{ partial "icons/ionicons" (dict "logoname" "folder-open-outline" "size" 5) }}
-      Categories:
-    </span>
-    {{ range $idx, $category := . }}
-      {{- if ne $idx 0 }} {{ end }}
-        <a href="{{ "categories/" | relURL }}{{ $category | urlize }}" >{{ $category }}</a>
-    {{- end }}
-  </div>
-{{ end }}
-{{ with .Params.tags }}
-  <div class="pb-2 text-gray-500">
-    <span class="font-bold">
-      {{ partial "icons/ionicons" (dict "logoname" "pricetags-outline" "size" 5) }}
-      Tags:
-    </span>
-    {{ range $idx, $tag := . }}
-      {{- if ne $idx 0 }} {{ end }}
-        <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}" 
-          class="
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "folder-open-outline" "size" 5) }}
+          Categories:
+        </span>
+        {{ range $idx, $category := . }}
+          {{- if ne $idx 0 }}{{ end }}
+          <a href="{{ "categories/" | relURL }}{{ $category | urlize }}"
+            >{{ $category }}</a
+          >
+        {{- end }}
+      </div>
+    {{ end }}
+    {{ with .Params.tags }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "pricetags-outline" "size" 5) }}
+          Tags:
+        </span>
+        {{ range $idx, $tag := . }}
+          {{- if ne $idx 0 }}{{ end }}
+          <a
+            href="{{ "tags/" | relURL }}{{ $tag | urlize }}"
+            class="
             rounded-md 
             text-base 
             border 
@@ -57,28 +70,29 @@
             justify-center 
             no-underline
             text-gray-500"
-          >{{ $tag }}</a>
-    {{- end }}
+            >{{ $tag }}</a
+          >
+        {{- end }}
+      </div>
+    {{ end }}
+    <hr />
+    <div class="flex justify-between">
+      {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="no-underline">
+          <div class="text-left">
+            &laquo; Previous post<br />{{ .Title }}
+          </div>
+        </a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="no-underline">
+          <div class="text-right">
+            Next post &raquo;<br />{{ .Title }}
+          </div>
+        </a>
+      {{ end }}
     </div>
-  {{ end }}
-  <hr>
-  <div class="flex justify-between">
-    {{ with .PrevInSection }}
-      <a href="{{ .Permalink }}" class="no-underline">
-        <div class="text-left">
-          &laquo; Previous post<br>{{ .Title }}
-        </div>
-      </a>
-    {{ end }}
-    {{ with .NextInSection }}
-      <a href="{{ .Permalink }}" class="no-underline">
-        <div class="text-right">
-          Next post &raquo;<br>{{ .Title }}
-        </div>
-      </a>
-    {{ end }}
-  </div>
-  <hr>
-  {{ partial "comments.html" . }}
-</article>
+    <hr />
+    {{ partial "comments.html" . }}
+  </article>
 {{ end }}

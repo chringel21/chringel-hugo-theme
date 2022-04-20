@@ -2,16 +2,18 @@
 {{ with $cv.basics }}
   {{ with .summary }}
     <section class="mt-8 first:mt-0">
-
       <!-- To keep in the same column -->
       <div class="break-inside-avoid">
-
-        <h2 class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal">
+        <h2
+          class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal"
+        >
           ABOUT ME
         </h2>
 
         <section class="mb-4.5 break-inside-avoid">
-          <p class="mt-2.1 text-resume__md text-gray-700 leading-resume__normal">
+          <p
+            class="mt-2.1 text-resume__md text-gray-700 leading-resume__normal"
+          >
             {{ . }}
           </p>
         </section>

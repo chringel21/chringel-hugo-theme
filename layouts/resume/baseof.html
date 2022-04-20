@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang='{{ .Site.LanguageCode }}'>
-{{ partial "head.html" . }}
-{{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
-<body>
-  <main class="font-body hyphens-manual resume">
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
+  <body>
+    <main class="font-body hyphens-manual resume">
+      <!-- Page -->
+      <div
+        class="p-6 mx-auto page max-w-2xl print:max-w-a4 resume__md:max-w-a4 resume__md:h-a4 resume__xsm:p-8 resume__sm:p-9 resume__md:p-16 bg-white"
+      >
+        {{ partial "resume/title.html" . }}
 
-    <!-- Page -->
-    <div class="p-6 mx-auto page max-w-2xl print:max-w-a4 resume__md:max-w-a4 resume__md:h-a4 resume__xsm:p-8 resume__sm:p-9 resume__md:p-16 bg-white">
 
-      {{ partial "resume/title.html" . }}
+        <!-- Column -->
+        <div
+          class="md:columns-2 print:columns-2 gap-8 resume__md:h-a4-col print:h-a4-col column-fill-auto"
+        >
+          {{ partial "resume/about-me.html" . }}
 
-      <!-- Column -->
-      <div class="md:columns-2 print:columns-2 gap-8 resume__md:h-a4-col print:h-a4-col column-fill-auto">
+          {{ partial "resume/work-experience.html" . }}
 
-        {{ partial "resume/about-me.html" . }}
+          {{ partial "resume/education.html" . }}
 
-        {{ partial "resume/work-experience.html" . }}
+          {{ partial "resume/projects.html" . }}
 
-        {{ partial "resume/education.html" . }}
+          {{ partial "resume/skills.html" . }}
 
-        {{ partial "resume/projects.html" . }}
-
-        {{ partial "resume/skills.html" . }}
-
-        {{ partial "resume/contact.html" . }}
-
+          {{ partial "resume/contact.html" . }}
+        </div>
+        <!-- end Column -->
       </div>
-      <!-- end Column -->
-
-    </div>
-    <!-- end Page -->    
-
-  </main>
-
-</body>
-
+      <!-- end Page -->
+    </main>
+  </body>
 </html>

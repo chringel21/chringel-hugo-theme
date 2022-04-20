@@ -1,29 +1,35 @@
 @tailwind base;
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-headline;
   }
-  
+
   .prose a {
     @apply no-underline transition-colors duration-200;
   }
-  
+
   .prose a:hover {
     @apply no-underline transition-colors duration-200;
   }
-  
+
   .prose pre {
     @apply mt-0;
   }
 
-  .prose pre>code {
+  .prose pre > code {
     background-color: inherit;
     border-radius: inherit;
     padding: unset;
     font-weight: inherit;
   }
-  .prose code::before, .prose code::after {
+  .prose code::before,
+  .prose code::after {
     content: none;
   }
 
@@ -33,19 +39,19 @@
   body {
     @apply font-body;
   }
-  
+
   .no-prose li::before {
     background-color: unset !important;
   }
-  
+
   .pagination a {
-    @apply mx-2 rounded-md text-base border border-gray-300 w-1/2 p-2 items-center justify-center hover:no-underline text-gray-500
+    @apply mx-2 rounded-md text-base border border-gray-300 w-1/2 p-2 items-center justify-center hover:no-underline text-gray-500;
   }
-  
+
   .inline-svg {
     @apply inline-block relative h-5 w-5 top-1;
   }
-  
+
   .isso-comment-footer {
     @apply flex flex-row;
   }
@@ -60,18 +66,18 @@
     padding: 3px 8px;
     font-size: 0.875rem;
   }
-  
+
   .copy-code-button:hover {
     @apply cursor-pointer bg-gray-50;
   }
-  
+
   .copy-code-button:focus {
     /* Avoid an ugly focus outline on click in Chrome,
        but darken the button for accessibility.
        See https://stackoverflow.com/a/25298082/1481479 */
     @apply outline-none bg-gray-100;
   }
-  
+
   .copy-code-button:active {
     @apply bg-gray-200;
   }

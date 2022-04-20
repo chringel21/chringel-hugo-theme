@@ -1,31 +1,47 @@
 {{ define "main" }}
-  <article class="px-6 mx-auto max-w-2xl prose mb-16 text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark">
+  <article
+    class="px-6 mx-auto max-w-2xl prose mb-16 text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
+  >
     <h1 class="text-center font-light text-5xl m-0">{{ .Title }}</h1>
-      {{ .Content }}
+    {{ .Content }}
+
 
     <div class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"></div>
     <div class="grid md:grid-cols-2 gap-4">
       {{ range .Data.Terms.ByCount }}
-      {{ $permalink := .Page.Permalink }}
-        <div class="bg-white dark:bg-gray-700 shadow-sm hover:shadow-lg transition-shadow border border-gray-200 rounded-lg mb-5">
+        {{ $permalink := .Page.Permalink }}
+        <div
+          class="bg-white dark:bg-gray-700 shadow-sm hover:shadow-lg transition-shadow border border-gray-200 rounded-lg mb-5"
+        >
           <div class="h-48">
             {{ $firstChild := index .Pages 0 }}
             {{ if (isset $firstChild.Params "featured_image") }}
               <a href="{{ $permalink }}">
-                <div style="background-image: url('{{ $firstChild.Params.featured_image }}'); background-size: cover; background-position: center;" class="h-full rounded-t-lg"></div>
+                <div
+                  style="background-image: url('{{ $firstChild.Params.featured_image }}'); background-size: cover; background-position: center;"
+                  class="h-full rounded-t-lg"
+                ></div>
               </a>
             {{ else }}
               <a href="{{ $permalink }}">
-                <div class="h-full rounded-t-lg bg-gradient-to-r from-accent-700 to-accent-300"></div>
+                <div
+                  class="h-full rounded-t-lg bg-gradient-to-r from-accent-700 to-accent-300"
+                ></div>
               </a>
             {{ end }}
           </div>
           <div class="p-5">
             <a href="{{ $permalink }}">
-              <h5 class="text-gray-900 dark:text-white font-bold text-2xl tracking-tight mb-2">{{ .Page.Title }}</h5>
+              <h5
+                class="text-gray-900 dark:text-white font-bold text-2xl tracking-tight mb-2"
+              >
+                {{ .Page.Title }}
+              </h5>
             </a>
             {{ $pageCount := len .Pages }}
-            <p class="text-gray-500 text-sm">{{ $pageCount }} post{{ if ne $pageCount 1 }}s{{ end }}</p>
+            <p class="text-gray-500 text-sm">
+              {{ $pageCount }} post{{ if ne $pageCount 1 }}s{{ end }}
+            </p>
           </div>
         </div>
       {{ end }}

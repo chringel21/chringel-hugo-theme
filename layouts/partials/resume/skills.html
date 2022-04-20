@@ -1,11 +1,11 @@
 {{ $cv := index $.Site.Data.json_resume $.Site.Language.Lang }}
 {{ with $cv.skills }}
   <section class="mt-8 first:mt-0">
-
     <!-- To keep in the same column -->
     <div class="break-inside-avoid">
-
-      <h2 class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal">
+      <h2
+        class="mb-4 font-bold tracking-widest text-resume__sm2 text-gray-400 print:font-normal"
+      >
         SKILLS
       </h2>
 
@@ -13,7 +13,9 @@
         <section class="mb-4.5 break-inside-avoid">
           <header>
             {{ with .name }}
-              <h3 class="text-resume__lg font-semibold text-gray-700 leading-resume__snugish">
+              <h3
+                class="text-resume__lg font-semibold text-gray-700 leading-resume__snugish"
+              >
                 {{ . }}
               </h3>
             {{ end }}
@@ -25,9 +27,13 @@
           </header>
           {{ with .keywords }}
             <div class="my-3.2 last:pb-1.5">
-              <ul class="flex flex-wrap text-resume__md leading-relaxed -mr-1.6 -mb-1.6">
+              <ul
+                class="flex flex-wrap text-resume__md leading-relaxed -mr-1.6 -mb-1.6"
+              >
                 {{ range . }}
-                  <li class="px-2.5 mr-1.6 mb-1.6 text-resume__base text-gray-700 print:bg-white print:border-inset bg-gray-200">
+                  <li
+                    class="px-2.5 mr-1.6 mb-1.6 text-resume__base text-gray-700 print:bg-white print:border-inset bg-gray-200"
+                  >
                     {{ . }}
                   </li>
                 {{ end }}
@@ -38,6 +44,5 @@
       {{ end }}
 
     </div>
-
   </section>
 {{ end }}

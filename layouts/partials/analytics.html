@@ -1,6 +1,6 @@
 {{ if and .Site.GoogleAnalytics (not .Site.IsServer) }}
   {{ template "_internal/google_analytics.html" . }}
-{{/* Add support for umami website analytics */}}
+  {{/* Add support for umami website analytics */}}
 {{ else if and .Site.Params.umami.enabled (not .Site.IsServer) }}
   <script async defer data-website-id="{{ .Site.Params.umami.websiteId }}" src="{{ .Site.Params.umami.jsLocation }}"></script>
 {{ end }}

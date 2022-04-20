@@ -1,11 +1,11 @@
 function smoothScrollToNode(id) {
   var elementToView = document.getElementById(id);
   elementToView.scrollIntoView({
-    behavior: 'smooth'
-  }); 
+    behavior: "smooth",
+  });
 }
 
-document.getElementById('bouncing-arrow').onclick = ((e) => {
-  smoothScrollToNode('featured-post');
+document.getElementById("bouncing-arrow").onclick = (e) => {
+  smoothScrollToNode("featured-post");
   e.target.parentElement.remove();
-});
+};

@@ -1,32 +1,60 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
-<nav class="pagination text-center">
-  {{ with $pag.First }}
-    <a href="{{ .URL }}" class="pagination-link disabled:cursor-not-allowed" {{ if not $pag.HasPrev }} disabled{{ end }} aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  {{ end }}
-    <a href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" class="pagination-link" {{ if not $pag.HasPrev }} disabled{{ end }} aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  {{ $ellipsed := false }}
-  {{ $shouldEllipse := false }}
-  {{ range $pag.Pagers }}
-    {{ $right := sub .TotalPages .PageNumber }}
-    {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
-    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
-    {{ if $showNumber }}
+  <nav class="pagination text-center">
+    {{ with $pag.First }}
+      <a
+        href="{{ .URL }}"
+        class="pagination-link disabled:cursor-not-allowed"
+        {{ if not $pag.HasPrev }}disabled{{ end }}
+        aria-label="First"
+        ><span aria-hidden="true">&laquo;&laquo;</span></a
+      >
+    {{ end }}
+    <a
+      href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}"
+      class="pagination-link"
+      {{ if not $pag.HasPrev }}disabled{{ end }}
+      aria-label="Previous"
+      ><span aria-hidden="true">&laquo;</span></a
+    >
+    {{ $ellipsed := false }}
+    {{ $shouldEllipse := false }}
+    {{ range $pag.Pagers }}
+      {{ $right := sub .TotalPages .PageNumber }}
+      {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+      {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2))) }}
+      {{ if $showNumber }}
         {{ $ellipsed = false }}
         {{ $shouldEllipse = false }}
-    {{ else }}
+      {{ else }}
         {{ $shouldEllipse = not $ellipsed }}
         {{ $ellipsed = true }}
+      {{ end }}
+      {{ if $showNumber }}
+        <a
+          class="pagination-link {{ if eq . $pag }}bg-accent-200{{ end }}"
+          href="{{ .URL }}"
+          >{{ .PageNumber }}</a
+        >
+      {{ else if $shouldEllipse }}
+        <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+      {{ end }}
     {{ end }}
-    {{ if $showNumber }}
-      <a class="pagination-link {{ if eq . $pag }}bg-accent-200{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
-    {{ else if $shouldEllipse }}
-      <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+    <a
+      href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}"
+      class="pagination-link"
+      {{ if not $pag.HasNext }}disabled{{ end }}
+      aria-label="Next"
+      ><span aria-hidden="true">&raquo;</span></a
+    >
+    {{ with $pag.Last }}
+      <a
+        href="{{ .URL }}"
+        class="pagination-link"
+        {{ if not $pag.HasNext }}disabled{{ end }}
+        aria-label="Last"
+        ><span aria-hidden="true">&raquo;&raquo;</span></a
+      >
     {{ end }}
-  {{ end }}
-    <a href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" class="pagination-link" {{ if not $pag.HasNext }}disabled{{ end }} aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  {{ with $pag.Last }}
-    <a href="{{ .URL }}" class="pagination-link" {{ if not $pag.HasNext }}disabled{{ end }} aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  {{ end }}
-</nav>
+  </nav>
 {{ end }}

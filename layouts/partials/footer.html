@@ -1,5 +1,14 @@
-<footer class="bottom-0 w-full bg-gray-200 dark:bg-black p-4 text-xs text-center text-gray-700">
-  <p>made with <a href="https://gohugo.io" class="underline hover:text-accent-400">Hugo</a> and <a href="https://tailwindcss.com" class="underline hover:text-accent-400">TailwindCSS</a></p>
+<footer
+  class="bottom-0 w-full bg-gray-200 dark:bg-black p-4 text-xs text-center text-gray-700"
+>
+  <p>
+    made with
+    <a href="https://gohugo.io" class="underline hover:text-accent-400">Hugo</a>
+    and
+    <a href="https://tailwindcss.com" class="underline hover:text-accent-400"
+      >TailwindCSS</a
+    >
+  </p>
   <p>&copy; {{ .Site.Params.footerCopyrightText }}</p>
   <div class="hidden"></div>
 </footer>
@@ -10,13 +19,11 @@
   {{ $mainScriptPath := "js/main.js" }}
   {{ $main := resources.Get $mainScriptPath | resources.ExecuteAsTemplate $mainScriptPath . }}
 
-  {{ $bundle := slice $functions $main }} 
-  {{ $bundle := $bundle | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
+  {{ $bundle := slice $functions $main }}
+  {{ $bundle := $bundle | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}  <script src="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}"></script>
 {{ end }}
 {{ if .IsHome }}
   {{ $smoothScrollToNode := resources.Get "js/smoothScrollToNode.js" }}
   {{ $lateJS := slice $smoothScrollToNode | resources.Concat "js/smoothScrollToNode.js" }}
-  {{ $lateJS := $lateJS | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $lateJS.Permalink }}" integrity="{{ $lateJS.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ $lateJS := $lateJS | resources.Minify | resources.Fingerprint }}  <script src="{{ $lateJS.Permalink }}" integrity="{{ $lateJS.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}

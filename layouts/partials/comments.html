@@ -1,8 +1,8 @@
 {{ if and .Site.DisqusShortname (index .Params "comments" | default "true") (not .Site.IsServer) }}
-<section class="comments">
-	{{ template "_internal/disqus.html" . }}
-</section>
-{{/* Add support for ISSO comment system */}}
+  <section class="comments">
+    {{ template "_internal/disqus.html" . }}
+  </section>
+  {{/* Add support for ISSO comment system */}}
 {{ else if .Site.Params.isso.enabled }}
   <script
       data-isso="{{ .Site.Params.isso.data }}"
@@ -16,7 +16,10 @@
       data-isso-avatar-bg="{{ .Site.Params.isso.avatarBg }}"
       src="{{ .Site.Params.isso.jsLocation }}">
   </script>
-  <noscript>Please enable JavaScript to view the comments powered by <a href="https://posativ.org/isso/">Isso</a>.</noscript>
+  <noscript
+    >Please enable JavaScript to view the comments powered by
+    <a href="https://posativ.org/isso/">Isso</a>.</noscript
+  >
   <div>
     <section id="isso-thread"></section>
   </div>
