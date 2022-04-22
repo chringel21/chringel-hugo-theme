@@ -7,7 +7,7 @@
   h4,
   h5,
   h6 {
-    @apply font-headline;
+    @apply font-headline relative;
   }
 
   .prose a {
@@ -87,6 +87,6 @@
   }
 
   .link {
-    @apply opacity-0 ml-1 align-middle;
+    @apply inline-svg h-10 w-10 opacity-0 ml-1 align-top left-0 absolute -translate-x-full pr-2;
   }
 }

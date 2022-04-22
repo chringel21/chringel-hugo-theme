@@ -54,26 +54,6 @@ tags.forEach(function (tag) {
   Array.prototype.push.apply(headingNodes, results);
 });
 
-// prettier-ignore
-const linkHtml = '<span class="inline-svg h-10 w-10">' + 
-    '{{ $svg := resources.Get (print "svg/ionicons/link-outline.svg") }}' +
-    '{{- $path:="<path" -}}{{- $fill:="<path fill=\"none\"" -}}' +
-    '{{ replace ($svg.Content) $path $fill | safeHTML }}' +
-  '</span>'
-
-headingNodes.forEach(function (node) {
-  link = createEl("a");
-  link.onclick = (event) => event.preventDefault();
-  link.classList.add("link");
-  link.innerHTML = linkHtml;
-  id = node.getAttribute("id");
-  if (id) {
-    link.href = `${current}#${id}`;
-    node.appendChild(link);
-    node.classList.add("link-owner");
-  }
-});
-
 const copyHeadingLink = (clipboard) => {
   let deeplink, deeplinks, newLink, parent, target;
   deeplink = "link";
@@ -81,13 +61,17 @@ const copyHeadingLink = (clipboard) => {
   if (deeplinks) {
     document.addEventListener("click", (event) => {
       target = event.target;
-      parent = target.parentNode.parentNode;
+      parent =
+        target.nodeName === "svg"
+          ? target.parentNode
+          : target.parentNode.parentNode;
+      console.log(parent);
       if (
         (target && containsClass(target, deeplink)) ||
         containsClass(parent, deeplink)
       ) {
         event.preventDefault();
-        newLink = target.href != undefined ? target.href : parent.href;
+        newLink = target.href !== undefined ? target.href : parent.href;
         clipboard.writeText(newLink);
       }
     });

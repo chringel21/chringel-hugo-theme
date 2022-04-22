@@ -1,0 +1,7 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" class="link-owner">
+  <a href="{{ $.Page.Permalink }}#{{ .Anchor | safeURL }}" class="link">
+      {{ $svg := resources.Get (print "svg/ionicons/link-outline.svg") }}
+      {{- $path:="<path" -}}{{- $fill:="<path fill=\"none\"" -}}
+      {{ replace ($svg.Content) $path $fill | safeHTML }}
+  </a>{{ .Text | safeHTML }}
+</h{{ .Level }}>
