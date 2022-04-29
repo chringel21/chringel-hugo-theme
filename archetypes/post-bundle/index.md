@@ -3,7 +3,9 @@ title: "{{ replace .Name "-" " " | title }}"
 author: Me
 type: post
 date:  {{ now.Format "2006-01-02" }}
-featured_image: myimage.jpg
+cover:
+  src: images/feature.jpg
+  caption: Title image caption *Markdown* **supported**
 draft: true
 categories:
   - A
