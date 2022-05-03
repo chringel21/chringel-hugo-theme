@@ -52,6 +52,10 @@
     @apply inline-block relative h-5 w-5 top-1;
   }
 
+  .size-10 {
+    @apply h-10 w-10;
+  }
+
   .isso-comment-footer {
     @apply flex flex-row;
   }
