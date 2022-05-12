@@ -22,6 +22,9 @@
         <div class="flex justify-center space-x-4">
           {{ range .Site.Menus.social }}
             <a
+              {{ if eq .Name "Mastodon" }}
+                rel="me"
+              {{ end }}
               href="{{ .URL }}"
               title="{{ .Name }}"
               class="text-gray-700 dark:text-gray-200 hover:text-accent-400 transition-colors duration-200"
