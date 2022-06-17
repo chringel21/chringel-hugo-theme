@@ -26,6 +26,14 @@
         {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
       {{ end }}"
     />
+  {{- else if .Params.Tags -}}
+    {{ $length := len .Params.Tags | add -1 -}}
+    <meta
+      name="keywords"
+      content="{{ range $index, $element := .Params.Tags }}
+        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
+      {{ end }}"
+    />
   {{ else if .Site.Params.keywords }}
     {{ $length := len .Site.Params.keywords | add -1 -}}
     <meta
