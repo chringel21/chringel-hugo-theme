@@ -34,6 +34,15 @@
       </span>
       {{ .PublishDate.Format "January 2, 2006" }}
     </div>
+    {{ with .Lastmod }}
+    <div class="pb-2 text-gray-500">
+      <span class="font-bold">
+        {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
+        Last Updated:
+      </span>
+      {{ .Format "January 2, 2006" }}
+    </div>
+    {{ end }}
     {{ with .Params.categories }}
       <div class="pb-2 text-gray-500">
         <span class="font-bold">
