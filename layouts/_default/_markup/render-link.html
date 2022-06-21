@@ -8,6 +8,4 @@
   {{ if strings.HasPrefix .Destination "http" }}
     target="_blank" rel="nofollow noopener"
   {{ end }}
->
-  {{ .Text | safeHTML }}</a
->
+>{{ .Text | safeHTML }}</a>
