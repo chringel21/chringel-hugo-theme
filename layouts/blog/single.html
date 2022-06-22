@@ -1,6 +1,7 @@
 {{ define "main" }}
+  {{/* h-entry */}}
   <article
-    class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
+    class="h-entry px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
   >
     <h1>{{ .Title }}</h1>
     <div>
@@ -25,7 +26,10 @@
         {{ end }}
       </figure>
     {{ end }}
-    {{ .Content }}
+    {{/* h-entry */}}
+    <div class="e-content">
+      {{ .Content }}
+    </div>
     <hr />
     <div class="pb-2 text-gray-500">
       <span class="font-bold">
@@ -33,15 +37,19 @@
         Posted:
       </span>
       {{ .PublishDate.Format "January 2, 2006" }}
+      {{/* h-entry */}}
+      <time class="dt-published hidden"
+        >{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}</time
+      >
     </div>
     {{ with .Lastmod }}
-    <div class="pb-2 text-gray-500">
-      <span class="font-bold">
-        {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
-        Last Updated:
-      </span>
-      {{ .Format "January 2, 2006" }}
-    </div>
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
+          Last Updated:
+        </span>
+        {{ .Format "January 2, 2006" }}
+      </div>
     {{ end }}
     {{ with .Params.categories }}
       <div class="pb-2 text-gray-500">
@@ -100,8 +108,9 @@
           </div>
         </a>
       {{ end }}
+      {{/* h-entry */}}
+      <a class="u-url hidden" href="{{ .Permalink }}"></a>
     </div>
-    <hr />
     {{ partial "comments.html" . }}
   </article>
 {{ end }}
