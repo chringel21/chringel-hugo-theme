@@ -2,7 +2,11 @@
   <figure>
     <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
     <figcaption class="text-sm italic">
-      {{ .Title | $.Page.RenderString }}
+      {{ if .Title }}
+        {{ .Title | $.Page.RenderString }}
+      {{ else }}
+        {{ .Text | $.Page.RenderString }}
+      {{ end }}
     </figcaption>
   </figure>
 {{ else }}
