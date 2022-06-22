@@ -54,6 +54,18 @@ CanonifyURLs = true
   websiteId = "1234567-abcd-efgh-0000-abcdefg1234"
   jsLocation = "https://analytics.example.com/umami.js"
 
+# h-card configuration
+# fullName is mandatory
+  [Params.hcard]
+  avatar = "images/index.png"
+  fullName = "Christian Engel"
+  pronouns = [ "he", "him" ]
+  nickname = "chringel"
+  showLocation = true
+  city = "Potsdam"
+  region = "Brandenburg"
+  country = "Germany"
+
 # Social icons to be displayed on the front page
 [[menu.social]]
   name = "GitHub"

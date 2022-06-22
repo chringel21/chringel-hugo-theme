@@ -1,0 +1,29 @@
+<div class="h-card hidden">
+  <p>
+    <!-- prettier-ignore -->
+    {{ $len_pronouns := (len .Site.Params.Hcard.Pronouns) }}
+    <a class="u-url" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    created by
+    {{ with .Site.Params.Hcard.Avatar }}
+      <img class="u-photo" alt="" src="{{ . | absURL }}" />
+    {{ end }}<span class="p-name" rel="me"
+      >{{ .Site.Params.Hcard.FullName }}</span
+    >
+    <!-- prettier-ignore -->
+    {{ with .Site.Params.Hcard.Pronouns }}({{ range $index, $element := . }}<span class="u-pronoun">{{ $element }}</span>{{ if eq (add $index 1) $len_pronouns }}{{ else }}/{{ end }}{{ end }} pronouns{{ end }}{{ if isset .Site.Params.Hcard "nickname" }}{{ with .Site.Params.Hcard.Pronouns }}, {{ else }}({{ end }}also known as <span class="p-nickname">{{ .Site.Params.Hcard.Nickname }}</span> some places{{ end }}){{ if not .Site.Params.Hcard.ShowLocation }}.{{ end }}
+    <!-- prettier-ignore -->
+    {{ if .Site.Params.Hcard.ShowLocation }}in
+    <!-- prettier-ignore -->
+    {{ with .Site.Params.Hcard.City }} <span class="p-locality">{{ . }}</span>,{{ end }}
+    <!-- prettier-ignore -->
+    {{ with .Site.Params.Hcard.Region }} <span class="p-region">{{ . }}</span>,{{ end }}
+    <!-- prettier-ignore -->
+    {{ with .Site.Params.Hcard.Country }} <span class="p-country-name">{{ . }}</span>{{ end }}.
+    {{ end }}
+  </p>
+  {{ with .Site.Params.Hcard.Biography }}
+    <p>
+      <span class="p-note">{{ . | markdownify }}</span>
+    </p>
+  {{ end }}
+</div>

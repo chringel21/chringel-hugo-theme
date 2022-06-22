@@ -11,6 +11,9 @@
   </p>
   <p>&copy; {{ .Site.Params.footerCopyrightText }}</p>
   <div class="hidden"></div>
+  {{ if isset .Site.Params "hcard" }}
+    {{ partial "hcard.html" . }}
+  {{ end }}
 </footer>
 {{ if or (findRE "<pre" .Content 1) (eq .Section "post" ) (eq .Section "blog" ) }}
   {{ $functionsScriptPath := "js/functions.js" }}
