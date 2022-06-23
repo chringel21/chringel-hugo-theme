@@ -51,6 +51,18 @@
         {{ .Format "January 2, 2006" }}
       </div>
     {{ end }}
+    {{/* h-entry */}}
+    {{ with .Params.author }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "person-outline" "size" 5) }}
+          Posted By:
+        </span>
+        <a rel="author" class="p-author h-card" href="{{ "about" | relURL }}"
+          >{{ . }}</a
+        >
+      </div>
+    {{ end }}
     {{ with .Params.categories }}
       <div class="pb-2 text-gray-500">
         <span class="font-bold">
