@@ -3,7 +3,8 @@
   <article
     class="h-entry px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
   >
-    <h1>{{ .Title }}</h1>
+    {{/* h-entry */}}
+    <h1 class="p-name">{{ .Title }}</h1>
     <div>
       <span class="text-gray-400">
         {{ partial "icons/ionicons" (dict "logoname" "time-outline" "size" 5) }}
@@ -71,7 +72,10 @@
         </span>
         {{ range $idx, $category := . }}
           {{- if ne $idx 0 }}{{ end }}
-          <a href="{{ "categories/" | relURL }}{{ $category | urlize }}"
+          {{/* h-entry */}}
+          <a
+            href="{{ "categories/" | relURL }}{{ $category | urlize }}"
+            class="p-category"
             >{{ $category }}</a
           >
         {{- end }}
