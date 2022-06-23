@@ -29,7 +29,7 @@ CanonifyURLs = true
     headerTitle = 'chringel@dev: ~/$'
     # User image
     titleImage = 'images/index.png'
-    # Copyright text displayed in footer
+    # Copyright text displayed in footer, Markdown allowed
     footerCopyrightText = 'Christian Engel 2022'
 
 # Isso configuration
