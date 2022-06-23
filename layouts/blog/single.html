@@ -37,10 +37,13 @@
         {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
         Posted:
       </span>
-      {{ .PublishDate.Format "January 2, 2006" }}
       {{/* h-entry */}}
-      <time class="dt-published hidden"
-        >{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}</time
+      <time
+        class="dt-published"
+        datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
+        ><a class="u-url" href="{{ .Permalink }}"
+          >{{ .PublishDate.Format "January 2, 2006" }}</a
+        ></time
       >
     </div>
     {{ with .Lastmod }}
@@ -124,9 +127,8 @@
           </div>
         </a>
       {{ end }}
-      {{/* h-entry */}}
-      <a class="u-url hidden" href="{{ .Permalink }}"></a>
     </div>
+    <hr />
     {{ partial "comments.html" . }}
   </article>
 {{ end }}

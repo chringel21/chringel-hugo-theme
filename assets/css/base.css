@@ -22,6 +22,11 @@
     @apply mt-0;
   }
 
+  .prose .u-url {
+    color: inherit;
+    font-weight: inherit;
+  }
+
   .prose pre > code {
     background-color: inherit;
     border-radius: inherit;
