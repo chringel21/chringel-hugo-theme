@@ -67,6 +67,7 @@ hugo new --kind post-bundle post/my-post
 - 🧑‍💻 Syntax highlighting with copy function
 - 🔗 Deeplinks to headings in a blog post
 - 📄 Resume from JSON data based on [JsonResume schema](https://jsonresume.org/schema/)
+- ✍️ [IndieWeb](https://indiewebify.me/) implementation of [microformats2](http://microformats.org/) `h-card` and `h-entry`
 
 ## Full `config.toml` example
 
@@ -123,6 +124,18 @@ enableEmoji = true
   enabled = true
   websiteId = "1234567-abcd-efgh-0000-abcdefg1234"
   jsLocation = "https://analytics.example.com/umami.js"
+
+# microformat2 h-card configuration
+# All params except 'fullName' are optional
+[Params.hcard]
+  avatar = "/images/index.png"
+  fullName = "Christian Engel"
+  pronouns = [ "he", "him" ]
+  nickname = "chringel"
+  showLocation = true
+  city = "My Town"
+  region = "My State"
+  country = "My Country"
 
 # Social icons to be displayed on the front page
 [[menu.social]]
