@@ -43,7 +43,7 @@ git clone https://github.com/chringel21/chringel-hugo-theme.git
 cd chringel && npm install
 ```
 
-* Don't forget to edit your `config.toml` to use your new theme
+- Don't forget to edit your `config.toml` to use your new theme
 
 ```toml
 # config.toml
@@ -60,13 +60,13 @@ hugo new --kind post-bundle post/my-post
 
 ## Features
 
-* 🌝 /🌚 Automatic dark mode based on device setting
-* 💬 Isso commenting server similar to Disqus ([self-hosted](https://posativ.org/isso/docs/install/))
-* 📈 umami - simple, easy to use, web analytics solution ([self-hosted](https://umami.is/docs/install))
-* 🐦 SVG (social) icons powered by [ionicons](https://ionic.io/ionicons), currently Twitter and Github are available, but more can be downloaded with a simple shell script
-* 🧑‍💻 Syntax highlighting with copy function
-* 🔗 Deeplinks to headings in a blog post
-* 📄 Resume from JSON data based on [JsonResume schema](https://jsonresume.org/schema/)
+- 🌝 /🌚 Automatic dark mode based on device setting
+- 💬 Isso commenting server similar to Disqus ([self-hosted](https://posativ.org/isso/docs/install/))
+- 📈 umami - simple, easy to use, web analytics solution ([self-hosted](https://umami.is/docs/install))
+- 🐦 SVG (social) icons powered by [ionicons](https://ionic.io/ionicons), currently Twitter, Github, Mastodon and RSS are available, but more can be downloaded with a simple shell script
+- 🧑‍💻 Syntax highlighting with copy function
+- 🔗 Deeplinks to headings in a blog post
+- 📄 Resume from JSON data based on [JsonResume schema](https://jsonresume.org/schema/)
 
 ## Full `config.toml` example
 
@@ -132,6 +132,10 @@ enableEmoji = true
 [[menu.social]]
   name = "Twitter"
   url = "https://twitter.com/DeEgge"
+
+[[menu.social]]
+  name = "RSS"
+  url = "http://example.com/index.xml"
 
 # To make purging of CSS classes work in production
 [build]
