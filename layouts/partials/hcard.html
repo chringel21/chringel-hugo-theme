@@ -5,7 +5,14 @@
     <a class="u-url" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
     created by
     {{ with .Site.Params.Hcard.Avatar }}
-      <img class="u-photo" alt="" src="{{ . | absURL }}" />
+      {{ $image := resources.Get . }}
+      <img
+        class="u-photo"
+        src="{{ ($image.Fit "200x200 webp").RelPermalink }}"
+        width="200"
+        height="200"
+        alt="{{ $.Site.Params.Hcard.FullName }}"
+      />
     {{ end }}<span class="p-name" rel="me"
       >{{ .Site.Params.Hcard.FullName }}</span
     >
