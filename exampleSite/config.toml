@@ -71,6 +71,10 @@ CanonifyURLs = true
   authorizationEndpoint = "https://indieauth.com/auth"
   tokenEndpoint = "https://tokens.indieauth.com/token"
 
+[Params.webmention]
+  webmentionEndpoint = "https://webmention.io/example.com/webmention"
+  webmentionPingbackEndpoint = "https://webmention.io/example.com/xmlrpc"
+
 # Social icons to be displayed on the front page
 [[menu.social]]
   name = "GitHub"

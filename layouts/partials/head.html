@@ -89,6 +89,10 @@
       href="{{ .tokenEndpoint | default "https://tokens.indieauth.com/token" }}"
     />
   {{ end }}
+  {{ with .Site.Params.webmention }}
+    <link rel="webmention" href="{{ .webmentionEndpoint }}" />
+    <link rel="pingback" href="{{ .webmentionPingbackEndpoint }}" />
+  {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
   {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
   {{- if .Site.IsServer }}
