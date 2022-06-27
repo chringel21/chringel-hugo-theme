@@ -137,6 +137,14 @@ enableEmoji = true
   region = "My State"
   country = "My Country"
 
+[Params.indieweb]
+  authorizationEndpoint = "https://indieauth.com/auth"
+  tokenEndpoint = "https://tokens.indieauth.com/token"
+
+[Params.webmention]
+  webmentionEndpoint = "https://webmention.io/webmention"
+  webmentionPingbackEndpoint = "https://webmention.io/xmlrcp"
+
 # Social icons to be displayed on the front page
 [[menu.social]]
   name = "GitHub"
