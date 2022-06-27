@@ -66,6 +66,11 @@ CanonifyURLs = true
   region = "Brandenburg"
   country = "Germany"
 
+# IndieWeb authorization endpoints
+[Params.indieweb]
+  authorizationEndpoint = "https://indieauth.com/auth"
+  tokenEndpoint = "https://tokens.indieauth.com/token"
+
 # Social icons to be displayed on the front page
 [[menu.social]]
   name = "GitHub"

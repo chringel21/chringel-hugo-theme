@@ -79,6 +79,16 @@
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
+  {{ with .Site.Params.indieweb }}
+    <link
+      rel="authorization_endpoint"
+      href="{{ .authorizationEndpoint | default "https://indieauth.com/auth" }}"
+    />
+    <link
+      rel="token_endpoint"
+      href="{{ .tokenEndpoint | default "https://tokens.indieauth.com/token" }}"
+    />
+  {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
   {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
   {{- if .Site.IsServer }}
