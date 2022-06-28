@@ -11,11 +11,11 @@
   }
 
   .prose a {
-    @apply no-underline transition-colors duration-200;
+    @apply transition-colors duration-200;
   }
 
   .prose a:hover {
-    @apply no-underline transition-colors duration-200;
+    @apply bg-accent-700 text-white no-underline transition-colors duration-200;
   }
 
   .prose pre {
