@@ -18,6 +18,10 @@
     @apply bg-accent-700 text-white no-underline transition-colors duration-200;
   }
 
+  .prose a strong {
+    color: inherit;
+  }
+
   .prose pre {
     @apply mt-0;
   }
