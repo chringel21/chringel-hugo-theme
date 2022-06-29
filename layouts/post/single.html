@@ -32,6 +32,19 @@
       {{ .Content }}
     </div>
     <hr />
+    {{ with .Params.syndication }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "share-social-outline" "size" 5) }}
+          Interact With This Post At:
+        </span>
+        {{ range $silo, $url := . }}
+          {{ $logo := printf "logo-%s" $silo }}
+          <!-- prettier-ignore -->
+          <a href="{{ $url }}" class="u-syndication" rel="syndication"><span class="font-bold">{{ partial "icons/ionicons" (dict "logoname" $logo "size" 5) }}</span>{{ title $silo }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
     <div class="pb-2 text-gray-500">
       <span class="font-bold">
         {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
