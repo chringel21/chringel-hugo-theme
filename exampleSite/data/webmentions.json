@@ -1,0 +1,16 @@
+[
+  {
+    "author": {
+      "name": "John Doe",
+      "picture": "/pictures/fosstodon.org"
+    },
+    "name": "",
+    "content": "I really enjoyed your post",
+    "published": "2022-06-20T13:09:19+00:00",
+    "url": "https://chringel21.github.io/chringel-hugo-theme",
+    "type": "mention",
+    "source": "https://chringel21.github.io/chringel-hugo-theme",
+    "target": "https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/",
+    "relativeTarget": "/blog/lorem-markdownum/"
+  }
+]
