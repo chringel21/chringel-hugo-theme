@@ -142,8 +142,9 @@ enableEmoji = true
   tokenEndpoint = "https://tokens.indieauth.com/token"
 
 [Params.webmention]
-  webmentionEndpoint = "https://webmention.io/webmention"
-  webmentionPingbackEndpoint = "https://webmention.io/xmlrcp"
+  webmentionUrl = "https://webmention.io"
+  webmentionEndpoint = "/webmention"
+  webmentionPingbackEndpoint = "/xmlrcp"
 
 # Social icons to be displayed on the front page
 [[menu.social]]

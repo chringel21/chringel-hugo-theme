@@ -90,8 +90,14 @@
     />
   {{ end }}
   {{ with .Site.Params.webmention }}
-    <link rel="webmention" href="{{ .webmentionEndpoint }}" />
-    <link rel="pingback" href="{{ .webmentionPingbackEndpoint }}" />
+    <link
+      rel="webmention"
+      href="{{ .webmentionUrl }}{{ .webmentionEndpoint }}"
+    />
+    <link
+      rel="pingback"
+      href="{{ .webmentionUrl }}{{ .webmentionPingbackEndpoint }}"
+    />
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
   {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}

@@ -72,8 +72,9 @@ CanonifyURLs = true
   tokenEndpoint = "https://tokens.indieauth.com/token"
 
 [Params.webmention]
-  webmentionEndpoint = "https://webmention.io/example.com/webmention"
-  webmentionPingbackEndpoint = "https://webmention.io/example.com/xmlrpc"
+  webmentionUrl = "https://webmention.io"
+  webmentionEndpoint = "/example.com/webmention"
+  webmentionPingbackEndpoint = "/example.com/xmlrpc"
 
 # Social icons to be displayed on the front page
 [[menu.social]]
