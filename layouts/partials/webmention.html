@@ -1,0 +1,46 @@
+{{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "!=" "like") }}
+{{ $likes := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "==" "like") }}
+
+{{ if $mentions }}
+  <h4>Responses</h4>
+  {{ range $mentions }}
+    <div>
+      <div>
+        <a
+          rel="author"
+          class="u-author h-card u-url permalink font-bold text-sm"
+          href="{{ .source }}"
+        >
+          {{ $name := .author.name | safeHTML }}
+          {{ if isset .author "picture" }}
+            <div>
+              <img
+                class="u-photo mr-2 float-left w-16 h-16 rounded-full border border-gray-200"
+                loading="lazy"
+                src="{{ $.Site.Params.webmention.webmentionUrl }}{{ .author.picture | safeHTML }}"
+                alt="{{ $name }}"
+              />
+            </div>
+          {{ else }}
+            <div>
+              <img
+                class="u-photo"
+                loading="lazy"
+                src="/img/avatar-anonymous.jpg"
+                alt="{{ $name }} anonymous photo"
+              />
+            </div>
+          {{ end }}
+          {{ $name }}
+        </a>
+        •
+        <time class="dt-published text-sm" datetime="{{ .published }}">
+          {{- $publishedAsDate := .published | time -}}
+          {{ partial "reldate.html" $publishedAsDate }}
+        </time>
+      </div>
+      <p class="p-content p-name">{{ .content | safeHTML }}</p>
+    </div>
+  {{ end }}
+  <hr />
+{{ end }}

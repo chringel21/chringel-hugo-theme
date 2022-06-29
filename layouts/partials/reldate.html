@@ -1,0 +1,19 @@
+<!-- https://kodify.net/hugo/date-time/relative-age-hugo/ -->
+{{ $ageDays := div (sub now.Unix .Unix) 86400 }}
+{{ $ageMonths := div (sub now.Unix .Unix) 2592000 }}
+
+
+<!-- Published today -->
+{{ if eq $ageDays 0 }}
+  Today
+  <!-- Published in the last 31 days -->
+{{ else if lt $ageDays 31 }}
+  {{ $ageDays }}
+  {{ cond (eq $ageDays 1) "day" "days" }}
+  ago
+  <!-- Published month(s) ago -->
+{{ else }}
+  {{ $ageMonths }}
+  {{ cond (eq $ageMonths 1) "month" "months" }}
+  ago
+{{ end }}

@@ -29,6 +29,19 @@
   .prose .u-url {
     color: inherit;
     font-weight: inherit;
+    @apply no-underline;
+  }
+
+  .prose .u-photo {
+    @apply my-0;
+  }
+
+  .prose .p-content {
+    @apply my-0;
+  }
+
+  .prose .u-author {
+    @apply font-bold;
   }
 
   .prose pre > code {
