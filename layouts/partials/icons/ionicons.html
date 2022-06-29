@@ -1,15 +1,17 @@
 {{ $svg := resources.Get (print "svg/ionicons/" .logoname ".svg") }}
 {{ $size := .size | default 10 }}
-{{ if in $svg "logo" }}
-  <span class="inline-svg h-{{ $size }} w-{{ $size }}">
-    {{- $path:="<path" -}}
-    {{- $fill:="<path fill=\"currentColor\"" }}
-    {{ replace ($svg.Content) $path $fill | safeHTML }}
-  </span>
-{{ else }}
-  <span class="inline-svg">
-    {{- $path:="<path" -}}
-    {{- $fill:="<path fill=\"none\"" -}}
-    {{ replace ($svg.Content) $path $fill | safeHTML }}
-  </span>
+{{ with $svg }}
+  {{ if in $svg "logo" }}
+    <span class="inline-svg h-{{ $size }} w-{{ $size }}">
+      {{- $path:="<path" -}}
+      {{- $fill:="<path fill=\"currentColor\"" }}
+      {{ replace ($svg.Content) $path $fill | safeHTML }}
+    </span>
+  {{ else }}
+    <span class="inline-svg">
+      {{- $path:="<path" -}}
+      {{- $fill:="<path fill=\"none\"" -}}
+      {{ replace ($svg.Content) $path $fill | safeHTML }}
+    </span>
+  {{ end }}
 {{ end }}
