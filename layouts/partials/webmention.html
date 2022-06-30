@@ -4,11 +4,11 @@
 {{ if $mentions }}
   <h4>Responses</h4>
   {{ range $mentions }}
-    <div class="mb-5">
+    <article class="u-comment h-cite mb-5">
       <div>
         <a
           rel="author"
-          class="u-author h-card u-url permalink font-bold text-sm"
+          class="u-author h-card u-url font-bold text-sm"
           href="{{ .source }}"
         >
           {{ $name := .author.name | safeHTML }}
@@ -24,9 +24,9 @@
           {{ else }}
             <div>
               <img
-                class="u-photo"
+                class="u-photo mr-2 float-left w-16 h-16 rounded-full border border-gray-200"
                 loading="lazy"
-                src="/img/avatar-anonymous.jpg"
+                src="/img/anonymous-avatar.png"
                 alt="{{ $name }} anonymous photo"
               />
             </div>
