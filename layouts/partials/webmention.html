@@ -15,7 +15,7 @@
           {{ if isset .author "picture" }}
             <div>
               <img
-                class="u-photo mr-2 float-left w-16 h-16 rounded-full border border-gray-200"
+                class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
                 loading="lazy"
                 src="{{ $.Site.Params.webmention.webmentionUrl }}{{ .author.picture | safeHTML }}"
                 alt="{{ $name }}"
@@ -24,7 +24,7 @@
           {{ else }}
             <div>
               <img
-                class="u-photo mr-2 float-left w-16 h-16 rounded-full border border-gray-200"
+                class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
                 loading="lazy"
                 src="/img/anonymous-avatar.png"
                 alt="{{ $name }} anonymous photo"
@@ -39,8 +39,8 @@
           {{ partial "reldate.html" $publishedAsDate }}
         </time>
       </div>
-      <p class="p-content p-name">{{ .content | safeHTML }}</p>
-    </div>
+      <p class="p-content p-name text-sm">{{ .content | safeHTML }}</p>
+    </article>
   {{ end }}
   <hr />
 {{ end }}
