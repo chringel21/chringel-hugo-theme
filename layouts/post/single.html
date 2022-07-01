@@ -76,7 +76,17 @@
           Posted By:
         </span>
         <a rel="author" class="p-author h-card" href="{{ "about" | relURL }}"
-          >{{ . }}</a
+          >{{ . }}
+          {{ with $.Site.Params.Hcard.Avatar }}
+            {{ $image := resources.Get . }}
+            <img
+              class="u-photo hidden"
+              src="{{ ($image.Fit "200x200 webp").RelPermalink }}"
+              width="200"
+              height="200"
+              alt="{{ $.Site.Params.Hcard.FullName }}"
+            />
+          {{ end }}</a
         >
       </div>
     {{ end }}
