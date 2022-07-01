@@ -11,11 +11,11 @@
   }
 
   .prose a {
-    @apply transition-colors duration-200;
+    @apply transition-colors duration-200 hover:no-underline hover:transition-colors hover:duration-200;
   }
 
   .prose a:hover {
-    @apply bg-accent-700 text-white no-underline transition-colors duration-200;
+    @apply no-underline transition-colors duration-200;
   }
 
   .prose a strong {
@@ -42,6 +42,10 @@
 
   .prose .u-author {
     @apply font-bold;
+  }
+
+  .prose .facepile {
+    @apply transition ease-in-out hover:scale-150 duration-300 hover:z-20;
   }
 
   .prose pre > code {

@@ -1,5 +1,5 @@
-{{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "!=" "like") }}
-{{ $reactions := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "!=" "mention") }}
+{{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "mention") }}
+{{ $reactions := (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) }}
 
 {{ if $mentions }}
   <h4>Responses</h4>
@@ -48,48 +48,50 @@
 {{ if $reactions }}
   <h4>Reactions</h4>
   <div class="flex flex-wrap">
-    {{ $reactionIcon := "" }}
-    {{ $reactionText := "" }}
     {{ range $reactions }}
+      {{ $reactionIcon := "" }}
+      {{ $reactionText := "" }}
       {{ if eq .type "like" }}
         {{ $reactionIcon = "❤️" }}
         {{ $reactionText = "liked" }}
-      {{ else if eq .type "repost" }}
+      {{ else if or (eq .type "repost") }}
         {{ $reactionIcon = "🔁" }}
-        {{ $recationText = "reposted" }}
-      {{ else }}
+        {{ $reactionText = "reposted" }}
+      {{ else if ne .type "mention" }}
         {{ $reactionIcon = "⭐️" }}
         {{ $reactionText = "favorited" }}
       {{ end }}
-      <a
-        rel="author"
-        class="u-author h-card u-url font-bold text-sm"
-        href="{{ .url }}"
-        title="{{ .author.name }} {{ $reactionText }}"
-      >
-        {{ $name := .author.name | safeHTML }}
-        {{ if isset .author "picture" }}
-          <div class="relative">
-            <img
-              class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
-              loading="lazy"
-              src="{{ $.Site.Params.webmention.webmentionUrl }}{{ .author.picture | safeHTML }}"
-              alt="{{ $name }}"
-            />
-            <span class="absolute right-0">{{ $reactionIcon }}</span>
-          </div>
-        {{ else }}
-          <div class="relative">
-            <img
-              class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
-              loading="lazy"
-              src="/img/anonymous-avatar.png"
-              alt="{{ $name }} anonymous photo"
-            />
-            <span class="absolute right-0">{{ $reactionIcon }}</span>
-          </div>
-        {{ end }}
-      </a>
+      {{ if or (eq .type "like") (eq .type "repost") (eq .type "bookmark") }}
+        <a
+          rel="author"
+          class="u-author h-card u-url font-bold text-sm facepile"
+          href="{{ .url }}"
+          title="{{ .author.name }} {{ $reactionText }}"
+        >
+          {{ $name := .author.name | safeHTML }}
+          {{ if isset .author "picture" }}
+            <div class="relative">
+              <img
+                class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
+                loading="lazy"
+                src="{{ $.Site.Params.webmention.webmentionUrl }}{{ .author.picture | safeHTML }}"
+                alt="{{ $name }}"
+              />
+              <span class="absolute right-0">{{ $reactionIcon }}</span>
+            </div>
+          {{ else }}
+            <div class="relative">
+              <img
+                class="u-photo mr-2 float-left w-8 h-8 rounded-full border border-gray-200"
+                loading="lazy"
+                src="/img/anonymous-avatar.png"
+                alt="{{ $name }} anonymous photo"
+              />
+              <span class="absolute right-0">{{ $reactionIcon }}</span>
+            </div>
+          {{ end }}
+        </a>
+      {{ end }}
     {{ end }}
   </div>
 {{ end }}
