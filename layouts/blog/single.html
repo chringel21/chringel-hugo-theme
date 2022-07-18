@@ -27,10 +27,41 @@
         {{ end }}
       </figure>
     {{ end }}
+    {{- if .Params.series -}}
+      {{- with index (.GetTerms "series") 0 -}}
+        <div class="notice">
+          <p>
+            This post is part of the
+            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            series.
+          </p>
+        </div>
+      {{- end -}}
+    {{- end -}}
     {{/* h-entry */}}
     <div class="e-content">
       {{ .Content }}
     </div>
+    <hr />
+    {{- if .Params.series -}}
+      <div class="post-series">
+        {{- $series := where .Site.RegularPages.ByDate ".Params.series" "intersect" .Params.series -}}
+        {{- with $series -}}
+          <h3 id="series">This series</h3>
+          <ol>
+            {{- range . -}}
+              <li>
+                {{- if eq .File.UniqueID $.File.UniqueID -}}
+                  <b>{{ .Title }}</b>
+                {{- else -}}
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{- end -}}
+              </li>
+            {{- end -}}
+          </ol>
+        {{- end -}}
+      </div>
+    {{- end -}}
     <hr />
     {{ with .Params.syndication }}
       <div class="pb-2 text-gray-500">

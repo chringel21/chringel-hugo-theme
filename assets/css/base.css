@@ -119,4 +119,8 @@
   .link {
     @apply inline-svg h-10 w-10 opacity-0 ml-1 align-top left-0 absolute -translate-x-full pr-2;
   }
+
+  .notice {
+    @apply border-l-2 border-l-accent-500 pl-3;
+  }
 }
