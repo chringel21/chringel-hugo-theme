@@ -3,9 +3,9 @@
   <div
     class="grid gap-0 md:grid-cols-3 grid-cols-1 bg-white dark:bg-gray-600 shadow-sm border-2 border-gray-200 rounded-lg mb-5 hover:shadow-xl transition-shadow"
   >
-    <div class="md:col-span-2 col-span-1">
-      {{ if (isset .Params "cover") }}
-        {{ $image := .Resources.GetMatch .Params.cover.src }}
+    {{ if (isset .Params "cover") }}
+      {{ $image := .Resources.GetMatch .Params.cover.src }}
+      <div class="md:col-span-2 col-span-1">
         <a href="{{ $permalink }}" aria-label="{{ .Title }}">
           <img
             src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}"
@@ -15,28 +15,22 @@
             class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover"
           />
         </a>
-      {{ else }}
-        <a href="{{ $permalink }}">
-          <div
-            class="h-full md:rounded-l-lg rounded-t-lg bg-gradient-to-r from-accent-700 to-accent-300"
-          ></div>
-        </a>
-      {{ end }}
-    </div>
-    <div class="p-5 h-full">
-      <a href="{{ $permalink }}">
+      </div>
+    {{ end }}
+    <div class="p-5 h-full {{ cond (isset .Params "cover") "" "col-span-3" }}">
+      <a href="{{ $permalink }}" aria-label="{{ .Title }}">
         <h3
           class="text-gray-900 dark:text-white font-bold text-2xl tracking-tight mb-2"
         >
           {{ .Title }}
         </h3>
+        <p class="text-gray-500 text-sm dark:text-gray-200">
+          {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+        </p>
+        <p class="font-normal text-gray-700 dark:text-gray-200 mb-3">
+          {{ .Description }}
+        </p>
       </a>
-      <p class="text-gray-500 text-sm">
-        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
-      </p>
-      <p class="font-normal text-gray-700 dark:text-gray-200 mb-3">
-        {{ .Description }}
-      </p>
     </div>
   </div>
 {{ end }}
