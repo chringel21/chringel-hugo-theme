@@ -123,4 +123,8 @@
   .notice {
     @apply border-l-2 border-l-accent-500 pl-3;
   }
+
+  .footer-copyright a {
+    @apply underline hover:text-accent-400;
+  }
 }

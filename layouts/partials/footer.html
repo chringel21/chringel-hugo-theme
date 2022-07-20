@@ -9,7 +9,9 @@
       >TailwindCSS</a
     >
   </p>
-  <p>{{ .Site.Params.footerCopyrightText | markdownify }}</p>
+  <p class="footer-copyright">
+    {{ .Site.Params.footerCopyrightText | markdownify }}
+  </p>
   <div class="hidden"></div>
   {{ if isset .Site.Params "hcard" }}
     {{ partial "hcard.html" . }}
