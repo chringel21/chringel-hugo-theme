@@ -31,6 +31,8 @@ CanonifyURLs = true
     titleImage = 'images/index.png'
     # Copyright text displayed in footer, Markdown allowed
     footerCopyrightText = 'Christian Engel 2022'
+    # Show 'Previous Post/Next Post' navigation (defaults to true)
+    showPrevNextPostNavigation = true
 
 # Isso configuration
 # https://posativ.org/isso/docs/configuration/client/

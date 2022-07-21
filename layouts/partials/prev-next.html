@@ -1,24 +1,27 @@
-<div class="flex justify-between">
-  {{ with .PrevInSection }}
-    <a href="{{ .Permalink }}" class="no-underline">
-      <div class="text-left">
-        <span class="text-sm">
-          {{ partial "icons/ionicons" (dict "logoname" "arrow-back-outline" "size" 5) }}
-          Previous post <br />{{ .Title }}
-        </span>
-      </div>
-    </a>
-  {{ end }}
-  {{ with .NextInSection }}
-    <a href="{{ .Permalink }}" class="no-underline">
-      <div class="text-right">
-        <span class="text-sm">
-          Next post
-          {{ partial "icons/ionicons" (dict "logoname" "arrow-forward-outline" "size" 5) }}
-          <br />{{ .Title }}
-        </span>
-      </div>
-    </a>
-  {{ end }}
-</div>
-<hr />
+{{ $showPrevNextPostNavigation := $.Site.Params.ShowPrevNextPostNavigation | default "true" }}
+{{ if (eq $showPrevNextPostNavigation "true") }}
+  <div class="flex justify-between">
+    {{ with .PrevInSection }}
+      <a href="{{ .Permalink }}" class="no-underline">
+        <div class="text-left">
+          <span class="text-sm">
+            {{ partial "icons/ionicons" (dict "logoname" "arrow-back-outline" "size" 5) }}
+            Previous post <br />{{ .Title }}
+          </span>
+        </div>
+      </a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a href="{{ .Permalink }}" class="no-underline">
+        <div class="text-right">
+          <span class="text-sm">
+            Next post
+            {{ partial "icons/ionicons" (dict "logoname" "arrow-forward-outline" "size" 5) }}
+            <br />{{ .Title }}
+          </span>
+        </div>
+      </a>
+    {{ end }}
+  </div>
+  <hr />
+{{ end }}
