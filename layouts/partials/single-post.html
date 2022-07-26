@@ -1,0 +1,151 @@
+<main
+  class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg dark:prose-dark"
+>
+  {{/* h-entry */}}
+  <article class="h-entry">
+    {{/* h-entry */}}
+    <h1 class="p-name">{{ .Title }}</h1>
+    <div>
+      <span class="text-gray-400">
+        {{ partial "icons/ionicons" (dict "logoname" "time-outline" "size" 5) }}
+        {{ .ReadingTime }} minute read
+      </span>
+    </div>
+    {{ with .Params.cover }}
+      {{ $image := $.Page.Resources.GetMatch .src }}
+      <figure>
+        <img
+          src="{{ ($image.Resize "x550 webp q100").RelPermalink }}"
+          alt="{{ cond (isset . "caption") .caption $.Page.Title }}"
+          loading="lazy"
+          class="shadow-lg"
+        />
+        {{ with .caption }}
+          <figcaption class="text-sm italic">
+            {{ . | $.Page.RenderString }}
+          </figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+    {{- if .Params.series -}}
+      {{- with index (.GetTerms "series") 0 -}}
+        <div class="notice">
+          <p>
+            This post is part of the
+            <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            series.
+          </p>
+        </div>
+      {{- end -}}
+    {{- end -}}
+    {{/* h-entry */}}
+    <div class="e-content">
+      {{ .Content }}
+    </div>
+    <hr />
+    {{- if .Params.series -}}
+      <div class="post-series">
+        {{- $series := where .Site.RegularPages.ByDate ".Params.series" "intersect" .Params.series -}}
+        {{- with $series -}}
+          <h3 id="series">This series</h3>
+          <ol>
+            {{- range . -}}
+              <li>
+                {{- if eq .File.UniqueID $.File.UniqueID -}}
+                  <b>{{ .Title }}</b>
+                {{- else -}}
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{- end -}}
+              </li>
+            {{- end -}}
+          </ol>
+        {{- end -}}
+      </div>
+      <hr />
+    {{- end -}}
+    {{ with .Params.syndication }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "share-social-outline" "size" 5) }}
+          Interact With This Post At:
+        </span>
+        {{ range $silo, $url := . }}
+          {{ $logo := printf "logo-%s" $silo }}
+          <!-- prettier-ignore -->
+          <a href="{{ $url }}" class="u-syndication" rel="syndication"><span class="font-bold">{{ partial "icons/ionicons" (dict "logoname" $logo "size" 5) }}</span>{{ title $silo }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ partial "post-dates.html" . }}
+    {{/* h-entry */}}
+    {{ with .Params.author }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "person-outline" "size" 5) }}
+          Posted By:
+        </span>
+        <a rel="author" class="p-author h-card" href="{{ "about" | relURL }}"
+          >{{ . }}
+          {{ with $.Site.Params.Hcard.Avatar }}
+            {{ $image := resources.Get . }}
+            <img
+              class="u-photo hidden"
+              src="{{ ($image.Fit "200x200 webp").RelPermalink }}"
+              width="200"
+              height="200"
+              alt="{{ $.Site.Params.Hcard.FullName }}"
+            />
+          {{ end }}</a
+        >
+      </div>
+    {{ end }}
+    {{ with .Params.categories }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "folder-open-outline" "size" 5) }}
+          Categories:
+        </span>
+        {{ range $idx, $category := . }}
+          {{- if ne $idx 0 }}{{ end }}
+          {{/* h-entry */}}
+          <a
+            href="{{ "categories/" | relURL }}{{ $category | urlize }}"
+            class="p-category"
+            >{{ $category }}</a
+          >
+        {{- end }}
+      </div>
+    {{ end }}
+    {{ with .Params.tags }}
+      <div class="pb-2 text-gray-500">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "pricetags-outline" "size" 5) }}
+          Tags:
+        </span>
+        {{ range $idx, $tag := . }}
+          {{- if ne $idx 0 }}{{ end }}
+          <a
+            href="{{ "tags/" | relURL }}{{ $tag | urlize }}"
+            class="
+            rounded-md 
+            text-base 
+            border 
+            border-gray-300 
+            hover:bg-gray-100 
+            w-1/2 
+            p-1 
+            items-center 
+            justify-center 
+            no-underline
+            text-gray-500"
+            >{{ $tag }}</a
+          >
+        {{- end }}
+      </div>
+    {{ end }}
+    <hr />
+  </article>
+  {{ partial "prev-next.html" . }}
+  {{ partial "webmention.html" . }}
+  {{ partial "comments.html" . }}
+</main>
