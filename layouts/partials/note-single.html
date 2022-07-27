@@ -1,5 +1,5 @@
 <div
-  class="mx-auto mb-4 prose text-gray-700 justify-self-center lg:prose-lg dark:prose-dark max-w-xl"
+  class="mx-auto mb-4 prose text-gray-700 justify-self-center lg:prose-lg dark:prose-dark w-3/4"
 >
   {{/* h-entry */}}
   <article
@@ -12,7 +12,7 @@
     {{ if (isset .Params "reply") }}
       <span class="p-summary"
         >💬 Comment on
-        <a href="{{ .Params.reply.url }}" class="u-in-reply-to">
+        <a href="{{ .Params.reply.url }}" class="u-in-reply-to break-all">
           {{ .Params.reply.url }}
         </a>
       </span>
@@ -20,7 +20,7 @@
     {{ if (isset .Params "like") }}
       <span class="p-summary"
         >❤️ Liked
-        <a href="{{ .Params.like.url }}" class="u-like-of">
+        <a href="{{ .Params.like.url }}" class="u-like-of break-all">
           {{ .Params.like.url }}
         </a>
       </span>
@@ -28,7 +28,7 @@
     {{ if (isset .Params "repost") }}
       <span class="p-summary"
         >🔁 Reposted
-        <a href="{{ .Params.repost.url }}" class="u-repost-of">
+        <a href="{{ .Params.repost.url }}" class="u-repost-of break-all">
           {{ .Params.repost.url }}
         </a>
       </span>
