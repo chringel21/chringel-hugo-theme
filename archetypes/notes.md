@@ -1,7 +1,7 @@
 ---
 author: Me
 type: note
-date: { { now.Format "2006-01-02" } }
+date: {{ now.Format "2006-01-02" }}
 draft: true
 categories:
   - Notes
