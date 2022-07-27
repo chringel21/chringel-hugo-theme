@@ -25,7 +25,7 @@
         </a>
       </span>
     {{ end }}
-    {{ if (isset .Params "reply") }}
+    {{ if (isset .Params "repost") }}
       <span class="p-summary"
         >🔁 Reposted
         <a href="{{ .Params.repost.url }}" class="u-repost-of">
