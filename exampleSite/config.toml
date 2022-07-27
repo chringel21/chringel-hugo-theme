@@ -8,7 +8,7 @@ author = "Christian Engel"
 copyright = "Copyright © 2022, Christian Engel, all rights reserved."
 
 pluralizelisttitles = false
-paginate = 5
+paginate = 10
 enableEmoji = true
 
 RelativeURLs = true
