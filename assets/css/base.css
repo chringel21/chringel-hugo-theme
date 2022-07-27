@@ -127,4 +127,12 @@
   .footer-copyright a {
     @apply underline hover:text-accent-400;
   }
+
+  h1.note {
+    @apply text-xl;
+  }
+
+  hr.note {
+    @apply m-1;
+  }
 }

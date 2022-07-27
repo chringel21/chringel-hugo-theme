@@ -1,29 +1,46 @@
 {{ $publishDate := .PublishDate.Format "January 2, 2006" }}
 {{ $lastmod := .Lastmod.Format "January 2, 2006" }}
-<div class="pb-2 text-gray-500">
-  <span class="font-bold">
-    {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
-    Posted:
-  </span>
-  {{/* h-entry */}}
-  <time
-    class="dt-published"
-    datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
-  >
-    <a class="u-url" href="{{ .Permalink }}">{{ $publishDate }}</a>
-  </time>
-</div>
-{{ if and (ne $lastmod $publishDate) (gt .Lastmod .PublishDate) }}
-  <div class="pb-2 text-gray-500">
+{{ if (eq (.Section) "notes") }}
+  <div class="m-1 text-gray-500 text-sm">
     <span class="font-bold">
-      {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
-      Last Updated:
+      {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
     </span>
+    {{/* h-entry */}}
     <time
-      class="dt-updated"
-      datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z0100" }}"
+      class="dt-published"
+      datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
     >
-      <a class="u-url" href="{{ .Permalink }}">{{ $lastmod }}</a>
+      <a class="u-url dark:text-white" href="{{ .Permalink }}"
+        >{{ $publishDate }}</a
+      >
     </time>
   </div>
+{{ else }}
+  <div class="pb-2 text-gray-500">
+    <span class="font-bold">
+      {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
+      Posted:
+    </span>
+    {{/* h-entry */}}
+    <time
+      class="dt-published"
+      datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
+    >
+      <a class="u-url" href="{{ .Permalink }}">{{ $publishDate }}</a>
+    </time>
+  </div>
+  {{ if and (ne $lastmod $publishDate) (gt .Lastmod .PublishDate) }}
+    <div class="pb-2 text-gray-500">
+      <span class="font-bold">
+        {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
+        Last Updated:
+      </span>
+      <time
+        class="dt-updated"
+        datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z0100" }}"
+      >
+        <a class="u-url" href="{{ .Permalink }}">{{ $lastmod }}</a>
+      </time>
+    </div>
+  {{ end }}
 {{ end }}

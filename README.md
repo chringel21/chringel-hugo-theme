@@ -1,6 +1,6 @@
 # chringel - Privacy focused theme for Hugo 🕵️
 
-Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter). Go check it out! :rocket:
+Based on the **awesome** [Hugo Starter Theme with Tailwind CSS](https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter). Go check it out! 🚀
 
 ![chringel](https://user-images.githubusercontent.com/6780575/155966743-3c1a3a47-d6e8-42b9-97e4-d862e8edb1e3.png)
 
@@ -58,6 +58,16 @@ Included is an [`archetype`](./archetypes/post-bundle/) to help you get started 
 hugo new --kind post-bundle post/my-post
 ```
 
+### Create a new note
+
+If you want to dive into the IndieWeb, chances are you want to create notes. They are like tweets/toots/status updates, or can contain comments, likes and reposts. Take a look at the [`archetype`](./archetypes/notes.md). I would recommend creating notes like this:
+
+```shell
+hugo new notes/`date +'%Y/%m/%d/%H%M'`.md
+```
+
+This will create a note in your content folder at `content/notes/YYYY/mm/dd/HHMM.md`.
+
 ## Features
 
 - 🌝 /🌚 Automatic dark mode based on device setting
@@ -67,7 +77,7 @@ hugo new --kind post-bundle post/my-post
 - 🧑‍💻 Syntax highlighting with copy function
 - 🔗 Deeplinks to headings in a blog post
 - 📄 Resume from JSON data based on [JsonResume schema](https://jsonresume.org/schema/)
-- ✍️ [IndieWeb](https://indiewebify.me/) implementation of [microformats2](http://microformats.org/) `h-card` and `h-entry`
+- 🕸 [IndieWeb](https://indiewebify.me/) implementation of [microformats2](http://microformats.org/) `h-card` and `h-entry`
 
 ## Full `config.toml` example
 
@@ -82,7 +92,7 @@ author = "Christian Engel"
 copyright = "Copyright © 2022, Christian Engel, all rights reserved."
 
 pluralizelisttitles = false
-paginate = 5
+paginate = 10
 enableEmoji = true
 
 [Params]
