@@ -39,6 +39,11 @@
         {{ . }}
       </div>
     {{ end }}
+    {{ if (isset .Params "bridgy") }}
+      {{ range .Params.bridgy }}
+        <a href="https://brid.gy/publish/{{ . }}"></a>
+      {{ end }}
+    {{ end }}
     <hr class="note" />
     <div class="flex flex-wrap">
       {{ with .Params.syndication }}
