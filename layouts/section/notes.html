@@ -8,7 +8,129 @@
     <div class="grid gap-4">
       {{ $numberOfItems := .Site.Params.paginate | default 10 }}
       {{ range .Paginator.Pages.ByPublishDate.Reverse | first $numberOfItems }}
-        {{ partial "note-single.html" . }}
+        <div
+          class="mx-auto mb-4 prose text-gray-700 justify-self-center lg:prose-lg dark:prose-dark w-full"
+        >
+          {{/* h-entry */}}
+          <article
+            class="h-entry shadow-sm hover:shadow-lg transition-shadow border border-gray-200 rounded-lg p-5"
+          >
+            {{/* h-entry */}}
+            {{ with .Title }}
+              <h1 class="p-name note">{{ . }}</h1>
+            {{ end }}
+            {{ if (isset .Params "reply") }}
+              <span class="p-summary"
+                >💬 Comment on
+                <a
+                  href="{{ .Params.reply.url }}"
+                  class="u-in-reply-to break-all"
+                >
+                  {{ .Params.reply.url }}
+                </a>
+              </span>
+            {{ end }}
+            {{ if (isset .Params "like") }}
+              <span class="p-summary"
+                >❤️ Liked
+                <a href="{{ .Params.like.url }}" class="u-like-of break-all">
+                  {{ .Params.like.url }}
+                </a>
+              </span>
+            {{ end }}
+            {{ if (isset .Params "repost") }}
+              <span class="p-summary"
+                >🔁 Reposted
+                <a
+                  href="{{ .Params.repost.url }}"
+                  class="u-repost-of break-all"
+                >
+                  {{ .Params.repost.url }}
+                </a>
+              </span>
+            {{ end }}
+            {{/* h-entry */}}
+            {{ with .Content }}
+              <div class="e-content">
+                {{ . }}
+              </div>
+            {{ end }}
+            {{ if (isset .Params "bridgy") }}
+              {{ range .Params.bridgy }}
+                <a href="https://brid.gy/publish/{{ . }}"></a>
+              {{ end }}
+            {{ end }}
+            <hr class="note" />
+            <div class="flex flex-wrap">
+              {{ with .Params.syndication }}
+                <div class="m-1 text-gray-500 text-sm">
+                  <span class="font-bold">
+                    {{ partial "icons/ionicons" (dict "logoname" "share-social-outline" "size" 5) }}
+                  </span>
+                  {{ range $silo, $url := . }}
+                    {{ $logo := printf "logo-%s" $silo }}
+                    <!-- prettier-ignore -->
+                    <a href="{{ $url }}" class="u-syndication" rel="syndication" alt="Interact with this post on {{ $silo }}"><span class="font-bold">{{ partial "icons/ionicons" (dict "logoname" $logo "size" 5) }}</span>{{ title $silo }}</a>
+                  {{ end }}
+                </div>
+              {{ end }}
+              {{ partial "post-dates.html" . }}
+              {{/* h-entry */}}
+              {{ with .Params.author }}
+                <div class="m-1 text-gray-500 text-sm">
+                  <span class="font-bold">
+                    {{ partial "icons/ionicons" (dict "logoname" "person-outline" "size" 5) }}
+                  </span>
+                  <a
+                    rel="author"
+                    class="p-author h-card"
+                    href="{{ "about" | relURL }}"
+                    >{{ . }}
+                    {{ with $.Site.Params.Hcard.Avatar }}
+                      {{ $image := resources.Get . }}
+                      <img
+                        class="u-photo hidden"
+                        src="{{ ($image.Fit "200x200 webp").RelPermalink }}"
+                        width="200"
+                        height="200"
+                        alt="{{ $.Site.Params.Hcard.FullName }}"
+                      />
+                    {{ end }}</a
+                  >
+                </div>
+              {{ end }}
+              {{ with .Params.tags }}
+                <div class="m-1 text-gray-500">
+                  <span class="font-bold">
+                    {{ partial "icons/ionicons" (dict "logoname" "pricetags-outline" "size" 5) }}
+                  </span>
+                  {{ range $idx, $tag := . }}
+                    {{- if ne $idx 0 }}{{ end }}
+                    <a
+                      href="{{ "tags/" | relURL }}{{ $tag | urlize }}"
+                      class="
+                p-category
+                rounded-md 
+                text-sm 
+                border 
+                border-gray-300 
+                hover:bg-gray-100 
+                w-1/2 
+                p-1 
+                items-center 
+                justify-center 
+                no-underline
+                text-gray-500"
+                      >{{ $tag }}</a
+                    >
+                  {{- end }}
+                </div>
+              {{ end }}
+            </div>
+            <hr class="note" />
+            {{ partial "webmention-minimal.html" . }}
+          </article>
+        </div>
       {{ end }}
     </div>
     {{ partial "widgets/pagination.html" . }}
