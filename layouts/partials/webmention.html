@@ -1,9 +1,9 @@
-{{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "mention") }}
-{{ $reactions := (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) }}
+{{ $replies := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "in" (slice "reply" "mention")) }}
+{{ $reactions := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "in" (slice "like" "repost" "bookmark")) }}
 
-{{ if $mentions }}
+{{ if $replies }}
   <h4>Responses</h4>
-  {{ range $mentions }}
+  {{ range $replies }}
     <article class="u-comment h-cite mb-5">
       <div>
         <a
@@ -54,12 +54,12 @@
       {{ if eq .type "like" }}
         {{ $reactionIcon = "❤️" }}
         {{ $reactionText = "liked" }}
-      {{ else if or (eq .type "repost") }}
+      {{ else if eq .type "repost" }}
         {{ $reactionIcon = "🔁" }}
         {{ $reactionText = "reposted" }}
-      {{ else if ne .type "mention" }}
-        {{ $reactionIcon = "⭐️" }}
-        {{ $reactionText = "favorited" }}
+      {{ else if eq .type "bookmark" }}
+        {{ $reactionIcon = "📎" }}
+        {{ $reactionText = "bookmarked" }}
       {{ end }}
       {{ if or (eq .type "like") (eq .type "repost") (eq .type "bookmark") }}
         <a
