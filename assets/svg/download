@@ -1,6 +1,27 @@
 #!/bin/sh
 set -ex
-icons="logo-twitter logo-github logo-mastodon logo-rss arrow-down-outline arrow-back-outline arrow-forward-outline time-outline copy-outline checkmark-outline close-outline calendar-outline folder-open-outline pricetags-outline refresh-outline person-outline share-social-outline"
+icons="
+  arrow-back-outline
+  arrow-down-outline
+  arrow-forward-outline
+  calendar-outline
+  chatbubbles-outline
+  checkmark-outline
+  close-outline
+  document-text-outline
+  folder-open-outline
+  logo-twitter
+  logo-github
+  logo-mastodon
+  logo-rss
+  person-outline
+  pricetags-outline
+  refresh-outline
+  repeat-outline
+  share-social-outline
+  star-outline
+  time-outline copy-outline
+"
 dest=ionicons
 url=https://unpkg.com/ionicons@5.5.2/dist/svg/
 mkdir -p "${dest}"
