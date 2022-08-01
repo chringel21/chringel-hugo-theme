@@ -1,12 +1,168 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hi, and welcome. on chringel - Privacy focused theme for Hugo</title><link>https://chringel21.github.io/chringel-hugo-theme/</link><description>Recent content in Hi, and welcome. on chringel - Privacy focused theme for Hugo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Copyright © 2022, Christian Engel, all rights reserved.</copyright><lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chringel21.github.io/chringel-hugo-theme/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://chringel21.github.io/chringel-hugo-theme/about/</link><pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/about/</guid><description>chringel - A lean theme for Hugo.
-Made by me. Based on the awesome Hugo Starter Theme with Tailwind CSS.</description></item><item><title>Lorem Markdownum</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/</link><pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/</guid><description>Link Amens nitentior vires Lorem markdownum Argo est praebebant Andros erat, tibi parte montibus erunt venis tacita spernimus more. Olim erat Aiax dixi factas potens. Perque natus ipsa potenti; nunc parte precor in mortalis manant bellica, umbrosaque et. Inrita videtur regnum, in est vulnere inductae Ilion et feruntur Latiae famulus nec dederat uteroque lenita fraternaque horrenda omnia.
-Maris Circe victum suggerit et conscia dixit Habes et undis carinae fundae lilia coniecit Tot nomine ire tot fassusque nobis ad Geminas iugales mille et ingenium magna agitantem Nemo quae sedemque Link Iunone Theseius abstulit morabar mersis Isto supremo, genitor Phoronidos, honos ibi lacus saepe rogato properus: sum an vetantis.</description></item><item><title>A second Post</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/second-post/</link><pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/second-post/</guid><description>The quick, brown fox jumps over a lazy dog.
-DJs flock by when MTV ax quiz prog.
-Junk MTV quiz graced by fox whelps.
-Bawds jog, flick quartz, vex nymphs.Waltz, bad nymph, for quick jigs vex!
-Fox nymphs grab quick-jived waltz.
-Brick quiz whangs jumpy veldt fox.
-Bright vixens jump; dozy fowl quack.
-Quick wafting zephyrs vex bold Jim.
-Quick zephyrs blow, vexing daft Jim.
-How quickly daft jumping zebras vex.</description></item><item><title>First Post</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/first-post/</link><pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/first-post/</guid><description>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</description></item><item><title>Resume</title><link>https://chringel21.github.io/chringel-hugo-theme/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/resume/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hi, and welcome. on chringel - Privacy focused theme for Hugo</title><link>https://chringel21.github.io/chringel-hugo-theme/</link><description>Recent content in Hi, and welcome. on chringel - Privacy focused theme for Hugo</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Copyright © 2022, Christian Engel, all rights reserved.</copyright><lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chringel21.github.io/chringel-hugo-theme/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://chringel21.github.io/chringel-hugo-theme/about/</link><pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/about/</guid><description><![CDATA[ 
+          
+          <p>chringel - A lean theme for Hugo.</p>
+<p>Made by <a
+  href="https://github.com/chringel21/"
+  
+    title="me"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>me</a>. Based on the <strong>awesome</strong> <a
+  href="https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+  
+    title="Hugo Starter Theme with Tailwind CSS"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>Hugo Starter Theme with Tailwind CSS</a>.</p>
+
+          ]]></description></item><item><title>Lorem Markdownum</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/</link><pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/</guid><description><![CDATA[ 
+          
+          
+            <p>
+              <img align="left" hspace="5" src="/blog/lorem-markdownum/images/aaron-burden-AXqMy8MSSdk-unsplash_hubbfe6d9ef68d83c7b8ac0a6954f2118c_2893721_0x550_resize_q100_h2_box.webp"/>
+            </p>
+          
+          <h2 id="amens-nitentior-vires" class="link-owner">
+  <a href="https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/#amens-nitentior-vires" class="link">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Link</title><path fill="none" d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36"/></svg>
+  </a>Amens nitentior vires
+</h2><p>Lorem markdownum Argo est praebebant Andros erat, tibi parte montibus erunt
+venis tacita spernimus more. Olim erat Aiax <em>dixi factas</em> potens. Perque natus
+ipsa <a
+  href="http://fugias.com/illa.php"
+  
+    title="potenti"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>potenti</a>; nunc parte precor in mortalis manant
+bellica, umbrosaque et. Inrita videtur regnum, in est vulnere inductae Ilion et
+feruntur Latiae famulus nec dederat uteroque lenita <strong>fraternaque horrenda
+omnia</strong>.</p>
+<ol>
+<li>Maris Circe victum suggerit et conscia dixit</li>
+<li>Habes et undis carinae fundae lilia coniecit</li>
+<li>Tot nomine ire tot fassusque nobis ad</li>
+<li>Geminas iugales mille et ingenium magna agitantem</li>
+<li>Nemo quae sedemque</li>
+</ol>
+<h2 id="iunone-theseius-abstulit-morabar-mersis" class="link-owner">
+  <a href="https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/#iunone-theseius-abstulit-morabar-mersis" class="link">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Link</title><path fill="none" d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36"/></svg>
+  </a>Iunone Theseius abstulit morabar mersis
+</h2><p>Isto supremo, genitor Phoronidos, honos ibi lacus saepe rogato properus: sum an
+vetantis. Non Marte praecessit fistula dentibus non; in in quoque passaque. Non
+tectis ferox. Non ille et nomine vel aliisque tollens illic <strong>morae virga</strong>
+repugnat: a lateri Achillem me illum. Acoetes potentior matrique occasu laborum
+sua letum Inachidas irata cognoscere quae dum prohibent est exilio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ff79c6">package</span> main
+
+<span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;fmt&#34;</span>
+
+<span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+    fmt.<span style="color:#50fa7b">Println</span>(<span style="color:#f1fa8c">&#34;Hello, World!&#34;</span>)
+}
+</code></pre></div><h2 id="haec-posuitque-altorum" class="link-owner">
+  <a href="https://chringel21.github.io/chringel-hugo-theme/blog/lorem-markdownum/#haec-posuitque-altorum" class="link">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Link</title><path fill="none" d="M208 352h-64a96 96 0 010-192h64M304 160h64a96 96 0 010 192h-64M163.29 256h187.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="36"/></svg>
+  </a>Haec posuitque altorum
+</h2><p>Studiosius auctoribus secuta remos partu, non animam aequalique haec tum.
+<strong>Tabellas vidit</strong> ventus postquam ab scelus pollue canoro. Natus ede semina
+illa canitiemque illac; haec illa <strong>Hylonome</strong> ille haut deos. Pares accepta
+recipit, visaque litora, lacrimasque fovit, et Aeacus.</p>
+<pre tabindex="0"><code>if (carrierLossyLed.digital.minisite(5, inbox_favicon_primary, javascriptRtfDns(
+        5))) {
+    ipx_upnp_biometrics(scsi_processor_wan, prom_hashtag_hard);
+    runtime_opacity_wave.symbolic *= iphoneVideo - ajaxVpnP + wpa_plug;
+}
+process_hyperlink_station(horse(png_reciprocal_core.memory_p(gps, flash),
+        url_restore_personal));
+storage_mode.optical = 1;
+</code></pre><p>Hiems <strong>Athamanta nequeunt</strong> ni nunc sanguine; imo sine solutum, virgo gurgitis
+vernat vaticinatus planxere. Terris nam caeco uti multos imas saepe, Iuno dea
+tremit viros Iove sub. Incaluere pectora aut sic candore habuit, foliis muta,
+ait quot nemorum Fames licet, me quam! Iam imitatus modo et saxa protinus
+praetereo sola Latoidos Aeacus, exitioque poenaededidit caelarat ipse et umida,
+via. Lenimen Busirin, Arctos eo citaeque et artificum quidem fugit <strong>magna</strong>,
+ubi.</p>
+<hr>
+<p>Image: <a
+  href="https://unsplash.com/@aaronburden"
+  
+    title="https://unsplash.com/@aaronburden"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>https://unsplash.com/@aaronburden</a></p>
+
+          ]]></description></item><item><title>A second Post</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/second-post/</link><pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/second-post/</guid><description><![CDATA[ 
+          
+          
+            <p>
+              <img align="left" hspace="5" src="/blog/second-post/images/randy-tarampi-U2eUlPEKIgU-unsplash_hu01acaed8f5c11a04baff65addea216ee_3421038_0x550_resize_q100_h2_box.webp"/>
+            </p>
+          
+          <p>The quick, brown fox jumps over a lazy dog.</p>
+<p>DJs flock by when MTV ax quiz prog.</p>
+<p>Junk MTV quiz graced by fox whelps.</p>
+<p>Bawds jog, flick quartz, vex nymphs.Waltz, bad nymph, for quick jigs vex!</p>
+<p>Fox nymphs grab quick-jived waltz.</p>
+<p>Brick quiz whangs jumpy veldt fox.</p>
+<p>Bright vixens jump; dozy fowl quack.</p>
+<p>Quick wafting zephyrs vex bold Jim.</p>
+<p>Quick zephyrs blow, vexing daft Jim.</p>
+<p>How quickly daft jumping zebras vex.</p>
+<p>Two driven jocks help fax my big quiz.</p>
+<p>Quick, Baz, get my woven flax jodhpurs!</p>
+<p>&ldquo;Now fax quiz Jack!&rdquo; my brave ghost pled.</p>
+<p>Five quacking zephyrs jolt my wax bed.</p>
+<p>Flummoxed by job, kvetching W. zaps Iraq.</p>
+<p>Cozy sphinx waves quart jug of bad milk.</p>
+<p>A very bad quack might jinx zippy fowls.</p>
+<p>Few quips galvanized the mock jury box.</p>
+<p>Quick brown dogs jump over the lazy fox.</p>
+<p>The jay, pig, fox, zebra, and my wolves quack!</p>
+<p>Blowzy red vixens fight for a quick jump.</p>
+<p>Joaquin Phoenix was gazed by MTV for luck.</p>
+<p>A wizard’s job is to vex chumps quickly in fog.</p>
+<p>Watch &ldquo;Jeopardy!&rdquo;, Alex Trebek&rsquo;s fun TV quiz game.</p>
+<p>Woven silk pyjamas exchanged for blue quartz.Brawny gods just</p>
+<hr>
+<p>Image: <a
+  href="https://unsplash.com/@randytarampi"
+  
+    title="https://unsplash.com/@randytarampi"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>https://unsplash.com/@randytarampi</a></p>
+
+          ]]></description></item><item><title>First Post</title><link>https://chringel21.github.io/chringel-hugo-theme/blog/first-post/</link><pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/blog/first-post/</guid><description><![CDATA[ 
+          
+          
+            <p>
+              <img align="left" hspace="5" src="/blog/first-post/images/paulo-ziemer-oV3zTK7vuP0-unsplash_hu153a88f4e3499ee3625c3f4c16541801_297284_0x550_resize_q100_h2_box.webp"/>
+            </p>
+          
+          <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</p>
+<p>&ldquo;What&rsquo;s happened to me?&rdquo; he thought.</p>
+<p>It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>
+<hr>
+<p>Image: <a
+  href="https://unsplash.com/@ziemer"
+  
+    title="https://unsplash.com/@ziemer"
+  
+  
+    target="_blank" rel="nofollow noopener"
+  
+>https://unsplash.com/@ziemer</a></p>
+
+          ]]></description></item><item><title>Resume</title><link>https://chringel21.github.io/chringel-hugo-theme/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://chringel21.github.io/chringel-hugo-theme/resume/</guid><description></description></item></channel></rss>
