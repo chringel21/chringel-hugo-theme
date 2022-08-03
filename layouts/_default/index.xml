@@ -49,6 +49,15 @@
             </p>
           {{ end }}
           {{ $content | safeHTML }}
+          {{ if .Params.reply }}
+            <a href="{{ .Params.reply.url }}" class="u-in-reply-to break-all"></a>
+          {{ end }}
+          {{ if .Params.like }}
+            <a href="{{ .Params.like.url }}" class="u-like-of break-all"></a>
+          {{ end }}
+          {{ if .Params.repost }}
+            <a href="{{ .Params.repost.url }}" class="u-repost-of break-all"></a>
+          {{ end }}
           ]]>
       </description>
 
