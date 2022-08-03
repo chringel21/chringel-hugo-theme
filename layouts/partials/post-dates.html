@@ -6,10 +6,7 @@
       {{ partial "icons/ionicons" (dict "logoname" "calendar-outline" "size" 5) }}
     </span>
     {{/* h-entry */}}
-    <time
-      class="dt-published"
-      datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
-    >
+    <time class="dt-published" datetime="{{ .PublishDate }}">
       <a class="u-url dark:text-white" href="{{ .Permalink }}"
         >{{ $publishDate }}</a
       >
@@ -22,10 +19,7 @@
       Posted:
     </span>
     {{/* h-entry */}}
-    <time
-      class="dt-published"
-      datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0100" }}"
-    >
+    <time class="dt-published" datetime="{{ .PublishDate }}">
       <a class="u-url" href="{{ .Permalink }}">{{ $publishDate }}</a>
     </time>
   </div>
@@ -35,10 +29,7 @@
         {{ partial "icons/ionicons" (dict "logoname" "refresh-outline" "size" 5) }}
         Last Updated:
       </span>
-      <time
-        class="dt-updated"
-        datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z0100" }}"
-      >
+      <time class="dt-updated" datetime="{{ .Lastmod }}">
         <a class="u-url" href="{{ .Permalink }}">{{ $lastmod }}</a>
       </time>
     </div>

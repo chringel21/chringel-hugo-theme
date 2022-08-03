@@ -2,9 +2,9 @@
 title: "{{ replace .Name "-" " " | title }}"
 author: Me
 type: post
-date:  {{ now.Format "2006-01-02" }}
+date:  {{ .Date }}
 # optional
-lastmod: {{ now.Foramt "2006-01-02" }}
+lastmod: {{ .Date }}
 cover:
   src: feature.jpg
   caption: Title image caption *Markdown* **supported**

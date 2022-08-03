@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 author: Me
 type: post
-date:  {{ now.Format "2006-01-02" }}
+date:  {{ .Date }}
 cover: 
   src: feature.jpg
   caption: Title image caption
