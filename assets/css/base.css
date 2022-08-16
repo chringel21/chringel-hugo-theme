@@ -129,7 +129,7 @@
   }
 
   h1.note {
-    @apply text-xl;
+    @apply text-xl hidden;
   }
 
   hr.note {
