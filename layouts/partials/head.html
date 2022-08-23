@@ -6,7 +6,11 @@
   />
   <title>
     {{ block "title" . }}
-      {{- .Title }} -
+      {{ if .Title }}
+        {{- .Title }} -
+      {{ else }}
+        {{ .Type | humanize }} -
+      {{ end }}
       {{ .Site.Title -}}
     {{ end }}
   </title>
