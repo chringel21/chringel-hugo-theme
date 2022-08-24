@@ -27,7 +27,14 @@
         {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
       </p>
       <p class="font-normal text-gray-700 dark:text-gray-200 mb-3">
-        {{ .Description }}
+        {{ if (ne .Type "note") }}
+          {{ .Description }}
+        {{ else }}
+          {{ .Summary }}
+          {{ if .Truncated }}
+            [...]
+          {{ end }}
+        {{ end }}
       </p>
     </div>
   </a>
