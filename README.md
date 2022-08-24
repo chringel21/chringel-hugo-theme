@@ -113,6 +113,18 @@ enableEmoji = true
     # Copyright text displayed in footer
     footerCopyrightText = 'Christian Engel 2022'
 
+# Favicons config
+# Get your favicons from https://realfavicongenerator.net/
+# Put them in the 'static' folder
+[Params.favicons]
+  appleTouchIcon = '/apple-touch-icon.png'
+  icon32 = '/favicon-32x32.png'
+  icon16 = '/favicon-16x16.png'
+  manifest = '/site.webmanifest'
+  maskIcon = '/safari-pinned-tab.svg'
+  msApplicationTileColor = '#5bbad5'
+  themeColor = '#ffffff'
+
 # Isso configuration
 # https://posativ.org/isso/docs/configuration/client/
 [Params.isso]

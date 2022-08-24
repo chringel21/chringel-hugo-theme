@@ -1,0 +1,26 @@
+{{ with .Site.Params.favicons }}
+  {{ if .msapplicationtilecolor }}
+    <meta
+      name="msapplication-TileColor"
+      content="{{ .msapplicationtilecolor }}"
+    />
+  {{ end }}
+  {{ if .themeColor }}
+    <meta name="theme-color" content="{{ .themecolor }}" />
+  {{ end }}
+  {{ if .appletouchicon }}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .appletouchicon }}" />
+  {{ end }}
+  {{ if .icon16 }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .icon16 }}" />
+  {{ end }}
+  {{ if .icon32 }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .icon32 }}" />
+  {{ end }}
+  {{ if .manifest }}
+    <link rel="manifest" href="{{ .manifest }}" />
+  {{ end }}
+  {{ if .maskicon }}
+    <link rel="mask-icon" href="{{ .maskicon }}" color="#5bbad5" />
+  {{ end }}
+{{ end }}
