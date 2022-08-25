@@ -1,14 +1,57 @@
-{{ if .Title }}
+{{ $image := .Page.Resources.GetMatch .Destination }}
+{{ $alt := .Title | default .Text }}
+
+{{ $tinyw := default "500x webp" }}
+{{ $smallw := default "800x webp" }}
+{{ $mediumw := default "1200x webp" }}
+{{ $largew := default "1500x webp" }}
+
+{{ $data := newScratch }}
+{{ $data.Set "tiny" ($image.Resize $tinyw) }}
+{{ $data.Set "small" ($image.Resize $smallw) }}
+{{ $data.Set "medium" ($image.Resize $mediumw) }}
+{{ $data.Set "large" ($image.Resize $largew) }}
+
+{{ $tiny := $data.Get "tiny" }}
+{{ $small := $data.Get "small" }}
+{{ $medium := $data.Get "medium" }}
+{{ $large := $data.Get "large" }}
+
+
+<a href="{{ $image.RelPermalink }}">
   <figure>
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
+    <picture>
+      <source
+        media="(max-width: 376px)"
+        srcset="{{ with $tiny.RelPermalink }}{{ . }}{{ end }}"
+      />
+
+      <source
+        media="(max-width: 992px)"
+        srcset="{{ with $small.RelPermalink }}{{ . }}{{ end }}"
+      />
+
+      <source
+        media="(max-width: 1400px)"
+        srcset="{{ with $medium.RelPermalink }}{{ . }}{{ end }}"
+      />
+
+      <source
+        media="(min-width: 1600px)"
+        srcset="{{ with $large.RelPermalink }}{{ . }}{{ end }}"
+      />
+
+      <img
+        alt="{{ $alt }}"
+        title="{{ $alt }}"
+        src="{{ $image }}"
+        height="{{ $image.Height }}"
+        width="{{ $image.Width }}"
+        loading="lazy"
+      />
+    </picture>
     <figcaption class="text-sm italic">
-      {{ if .Title }}
-        {{ .Title | $.Page.RenderString }}
-      {{ else }}
-        {{ .Text | $.Page.RenderString }}
-      {{ end }}
+      {{ $alt | $.Page.RenderString }}
     </figcaption>
   </figure>
-{{ else }}
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" />
-{{ end }}
+</a>
