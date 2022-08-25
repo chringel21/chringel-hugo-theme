@@ -98,7 +98,6 @@ enableEmoji = true
 [Params]
     name = "chringel"
     description = "A privacy focused theme for Hugo"
-    keywords = ['some', 'key', 'words']
 
     github_user = "chringel21"
     github_repo = "https://github.com/chringel21/chringel-hugo-theme"

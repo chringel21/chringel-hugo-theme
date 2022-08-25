@@ -22,31 +22,6 @@
       content="{{ .Site.Params.Description | safeHTML }}"
     />
   {{- end -}}
-  {{- if .Keywords -}}
-    {{ $length := len .Keywords | add -1 -}}
-    <meta
-      name="keywords"
-      content="{{ range $index, $element := .Keywords }}
-        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
-      {{ end }}"
-    />
-  {{- else if .Params.Tags -}}
-    {{ $length := len .Params.Tags | add -1 -}}
-    <meta
-      name="keywords"
-      content="{{ range $index, $element := .Params.Tags }}
-        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
-      {{ end }}"
-    />
-  {{ else if .Site.Params.keywords }}
-    {{ $length := len .Site.Params.keywords | add -1 -}}
-    <meta
-      name="keywords"
-      content="{{ range $index, $element := .Site.Params.keywords }}
-        {{ $element | safeHTML }}{{ if ne $index $length }},{{ end }}
-      {{ end }}"
-    />
-  {{- end -}}
   {{- if .Params.Author -}}
     <meta name="author" content="{{ .Params.Author }}" />
   {{ end -}}
