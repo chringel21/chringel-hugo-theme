@@ -12,20 +12,8 @@
       </span>
     </div>
     {{ with .Params.cover }}
-      {{ $image := $.Page.Resources.GetMatch .src }}
-      <figure>
-        <img
-          src="{{ ($image.Resize "x550 webp q100").RelPermalink }}"
-          alt="{{ cond (isset . "caption") .caption $.Page.Title }}"
-          loading="lazy"
-          class="shadow-lg"
-        />
-        {{ with .caption }}
-          <figcaption class="text-sm italic">
-            {{ . | $.Page.RenderString }}
-          </figcaption>
-        {{ end }}
-      </figure>
+      {{ $caption := .caption | default $.Page.Title }}
+      {{ partial "image.html" (dict "Page" $.Page "Destination" .src "Title" $caption) }}
     {{ end }}
     {{- if .Params.series -}}
       {{- with index (.GetTerms "series") 0 -}}
