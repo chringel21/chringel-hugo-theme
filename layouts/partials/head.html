@@ -81,7 +81,13 @@
     />
   {{ end }}
   <link rel="canonical" href="{{ .Permalink }}" />
-  {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+
+  {{ $styles := resources.Get "css/build.css" }}
+  {{ $env := getenv "THEME_DEVELOPMENT" }}
+  {{ if eq $env "true" }}
+    {{ $styles = resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+  {{ end }}
+
   {{- if .Site.IsServer }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   {{ else }}
