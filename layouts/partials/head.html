@@ -83,7 +83,7 @@
   <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ $styles := resources.Get "css/build.css" }}
-  {{ $env := getenv "THEME_DEVELOPMENT" }}
+  {{ $env := getenv "HUGO_THEME_DEVELOPMENT" }}
   {{ if eq $env "true" }}
     {{ $styles = resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
   {{ end }}
