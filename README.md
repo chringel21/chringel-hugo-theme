@@ -8,25 +8,6 @@ This theme was created with privacy in mind. By default, Disqus and Google Analy
 
 ## Quickstart
 
-### Prerequisites
-
-Make sure to install `postcss-cli` and `autoprefixer` globally in your environment, as Hugo Pipe’s PostCSS requires it. This is mentioned in the [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/).
-
-```bash
-
-npm install -g postcss-cli
-npm install -g autoprefixer
-```
-
-Make sure to use a minimum Hugo version of v0.69.0 and above.
-
-Set the `writeStats` option in your Hugo `config` file, so that purging of CSS classes works in production. See `/exampleSite/config.toml` as a guideline.
-
-```toml
-[build]
-  writeStats = true
-```
-
 ### For a new site
 
 ```bash
@@ -39,8 +20,6 @@ cd my-site/themes
 # Clone this theme
 git clone https://github.com/chringel21/chringel-hugo-theme.git
 
-# Change into your new theme's folder and install dependencies
-cd chringel && npm install
 ```
 
 - Don't forget to edit your `config.toml` to use your new theme
@@ -188,4 +167,45 @@ enableEmoji = true
 [markup]
   [markup.highlight]
     style = "dracula"
+```
+
+## Development
+
+Make sure to install `postcss-cli` and `autoprefixer` globally in your environment, as Hugo Pipe’s PostCSS requires it. This is mentioned in the [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/).
+
+```bash
+npm install -g postcss-cli
+npm install -g autoprefixer
+```
+
+Change into the theme's folder and install the dependencies.
+
+```bash
+cd themes/chringel
+npm install
+```
+
+Make sure to use a minimum Hugo version of v0.69.0 and above.
+
+Set the `writeStats` option in your Hugo `config` file, so that purging of CSS classes works in production. See `/exampleSite/config.toml` as a guideline.
+
+```toml
+[build]
+  writeStats = true
+```
+
+Run the `hugo server` using the following command:
+
+```bash
+HUGO_THEME_DEVELOPMENT=true hugo server --disableFastRender --buildDrafts --buildFuture
+```
+
+The theme will pick up the environment variable and use Hugo's [PostCSS pipe](https://gohugo.io/hugo-pipes/postcss/) to build CSS files.
+
+Check out the [Tailwind CSS docs](https://tailwindcss.com/docs/installation).
+
+### Building shippable CSS
+
+```bash
+postcss assets/css/styles.css --config assets/css/postcss.config.js > assets/css/build.css
 ```
