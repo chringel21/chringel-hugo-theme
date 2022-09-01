@@ -18,8 +18,8 @@
 {{ $large := $data.Get "large" }}
 
 
-<a href="{{ $image.RelPermalink }}">
-  <figure>
+<figure>
+  <a href="{{ $image.RelPermalink }}">
     <picture>
       <source
         media="(max-width: 376px)"
@@ -50,8 +50,8 @@
         loading="lazy"
       />
     </picture>
-    <figcaption class="text-sm italic">
-      {{ $alt | $.Page.RenderString }}
-    </figcaption>
-  </figure>
-</a>
+  </a>
+  <figcaption class="text-sm italic">
+    {{ $alt | $.Page.RenderString }}
+  </figcaption>
+</figure>
