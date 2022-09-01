@@ -60,7 +60,7 @@
   }
 
   .prose code {
-    @apply bg-gray-200 dark:bg-gray-700 rounded-md p-1 font-light;
+    @apply bg-gray-200 dark:bg-gray-500 rounded-md p-1 font-light;
   }
   body {
     @apply font-body;
@@ -88,7 +88,7 @@
 
   /* Shamelessly ripped from https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/ */
   .copy-code-button {
-    @apply border rounded bg-white border-gray-900 block ml-auto mr-0;
+    @apply border rounded bg-white dark:bg-gray-500 border-gray-900 block ml-auto mr-0;
     /* Until we get a new version of Tailwind that supports 
     @apply with complex classes, including responsive and pseudo-class variants */
     /* @apply rounded-sm sm */
@@ -98,18 +98,18 @@
   }
 
   .copy-code-button:hover {
-    @apply cursor-pointer bg-gray-50;
+    @apply cursor-pointer bg-gray-50 dark:bg-gray-600;
   }
 
   .copy-code-button:focus {
     /* Avoid an ugly focus outline on click in Chrome,
        but darken the button for accessibility.
        See https://stackoverflow.com/a/25298082/1481479 */
-    @apply outline-none bg-gray-100;
+    @apply outline-none bg-gray-100 dark:bg-gray-700;
   }
 
   .copy-code-button:active {
-    @apply bg-gray-200;
+    @apply bg-gray-200 dark:bg-gray-800;
   }
 
   .link-owner:hover > .link {

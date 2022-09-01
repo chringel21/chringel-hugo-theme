@@ -88,6 +88,7 @@ module.exports = {
             p: { color: theme("colors.gray.200") },
             ul: { color: theme("colors.gray.200") },
             ol: { color: theme("colors.gray.200") },
+            figcaption: { color: theme("colors.gray.300") },
             strong: { color: theme("colors.gray.200") },
             span: { color: theme("colors.gray.200") },
             code: {
