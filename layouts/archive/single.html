@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <article
+    class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 dark:prose-dark"
+  >
+    <h1 class="text-center font-light text-5xl m-0">{{ .Title }}</h1>
+    <div class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"></div>
+    {{ .Content }}
+
+    {{ $type := .Params.archivetype }}
+    {{ $.Scratch.Set "count" 1 }}
+
+    {{ range (.Site.RegularPages.GroupByDate "2006") }}
+      {{ if and (gt .Key 1) (gt (where .Pages "Type" $type) 0) }}
+        {{ range (where .Pages "Type" $type) }}
+          {{ if (eq ($.Scratch.Get "count") 1) }}
+            {{ $.Scratch.Set "count" 0 }}
+            <h2>
+              {{ .Date.Format "2006" }}
+            </h2>
+          {{ end }}
+        {{ end }}
+
+        {{ $.Scratch.Set "count" 1 }}
+        <ul class="list-none pl-0">
+          {{ range (where .Pages "Type" $type) }}
+            {{ if (ne .Params.hidden true) }}
+              <li class="flex space-x-2 items-baseline pl-0">
+                <span class="whitespace-nowrap font-mono">
+                  {{ .Date.Format "Jan 02" }}
+                </span>
+                <a href="{{ .RelPermalink }}">
+                  <span class="">{{ .Title }}</span>
+                </a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}
