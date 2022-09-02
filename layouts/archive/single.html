@@ -7,20 +7,11 @@
     {{ .Content }}
 
     {{ $type := .Params.archivetype }}
-    {{ $.Scratch.Set "count" 1 }}
-
     {{ range (.Site.RegularPages.GroupByDate "2006") }}
-      {{ if and (gt .Key 1) (gt (where .Pages "Type" $type) 0) }}
-        {{ range (where .Pages "Type" $type) }}
-          {{ if (eq ($.Scratch.Get "count") 1) }}
-            {{ $.Scratch.Set "count" 0 }}
-            <h2>
-              {{ .Date.Format "2006" }}
-            </h2>
-          {{ end }}
-        {{ end }}
-
-        {{ $.Scratch.Set "count" 1 }}
+      {{ $posts := (where .Pages "Type" $type) }}
+      {{ $posts_count := len $posts }}
+      {{ if and (gt .Key 1) (gt $posts_count 0) }}
+        <h2>{{ .Key }}</h2>
         <ul class="list-none pl-0">
           {{ range (where .Pages "Type" $type) }}
             {{ if (ne .Params.hidden true) }}
@@ -29,7 +20,7 @@
                   {{ .Date.Format "Jan 02" }}
                 </span>
                 <a href="{{ .RelPermalink }}">
-                  <span class="">{{ .Title }}</span>
+                  <span>{{ .Title }}</span>
                 </a>
               </li>
             {{ end }}
