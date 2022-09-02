@@ -826,7 +826,7 @@ h1, h2, h3, h4, h5, h6{
 
   .prose code{
     --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
   }
 }
 
@@ -876,18 +876,37 @@ body{
   border-color: rgb(17 24 39 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark){
+
+  .copy-code-button{
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  }
+}
+
+.copy-code-button {
     /* Until we get a new version of Tailwind that supports 
     @apply with complex classes, including responsive and pseudo-class variants */
     /* @apply rounded-sm sm */
     margin-bottom: -2px;
     padding: 3px 8px;
     font-size: 0.875rem;
-}
+  }
 
 .copy-code-button:hover{
   cursor: pointer;
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark){
+
+  .copy-code-button:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  }
 }
 
 .copy-code-button:focus {
@@ -900,9 +919,25 @@ body{
     outline-offset: 2px;
   }
 
+@media (prefers-color-scheme: dark){
+
+  .copy-code-button:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  }
+}
+
 .copy-code-button:active{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+@media (prefers-color-scheme: dark){
+
+  .copy-code-button:active{
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  }
 }
 
 .link-owner:hover > .link{
@@ -1963,6 +1998,10 @@ body .icon-parent::before {
   list-style-position: inside;
 }
 
+.list-none{
+  list-style-type: none;
+}
+
 .break-inside-avoid{
   -moz-column-break-inside: avoid;
        break-inside: avoid;
@@ -1982,6 +2021,10 @@ body .icon-parent::before {
 
 .items-center{
   align-items: center;
+}
+
+.items-baseline{
+  align-items: baseline;
 }
 
 .justify-center{
@@ -2010,12 +2053,22 @@ body .icon-parent::before {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .justify-self-center{
   justify-self: center;
 }
 
 .overflow-y-auto{
   overflow-y: auto;
+}
+
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 
 .break-all{
@@ -2157,6 +2210,10 @@ body .icon-parent::before {
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.pl-0{
+  padding-left: 0px;
 }
 
 .pb-2{
@@ -2347,12 +2404,6 @@ body .icon-parent::before {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-lg{
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .blur{
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2488,6 +2539,10 @@ body .icon-parent::before {
 
   .dark\:prose-dark :where(ol):not(:where([class~="not-prose"] *)){
     color: #e5e7eb;
+  }
+
+  .dark\:prose-dark :where(figcaption):not(:where([class~="not-prose"] *)){
+    color: #d1d5db;
   }
 
   .dark\:prose-dark :where(strong):not(:where([class~="not-prose"] *)){
