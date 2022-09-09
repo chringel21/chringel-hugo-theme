@@ -1,44 +1,46 @@
-{{ $replies := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "reply") }}
-{{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "mention") }}
-{{ $likes := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "==" "like") }}
-{{ $reposts := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "==" "repost") }}
+{{ if .Site.Data.webmentions }}
+  {{ $replies := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "reply") }}
+  {{ $mentions := (where (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "content" "!=" "") "type" "==" "mention") }}
+  {{ $likes := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "==" "like") }}
+  {{ $reposts := (where (where .Site.Data.webmentions "relativeTarget" "==" $.RelPermalink) "type" "==" "repost") }}
 
 
-<div class="flex">
-  {{ if $replies }}
-    <div class="m-1 text-gray-500 text-sm">
-      <span class="font-bold">
-        {{ partial "icons/ionicons" (dict "logoname" "chatbubbles-outline" "size" 5) }}
-      </span>
-      <!--  prettier-ignore  -->
-      {{ len $replies }} Response{{ if gt (len $replies) 1 }}s{{ end }}
-    </div>
-  {{ end }}
-  {{ if $reposts }}
-    <div class="m-1 text-gray-500 text-sm">
-      <span class="font-bold">
-        {{ partial "icons/ionicons" (dict "logoname" "repeat-outline" "size" 5) }}
-      </span>
-      <!--  prettier-ignore  -->
-      {{ len $reposts }} Repost{{ if gt (len $reposts) 1 }}s{{ end }}
-    </div>
-  {{ end }}
-  {{ if $likes }}
-    <div class="m-1 text-gray-500 text-sm">
-      <span class="font-bold">
-        {{ partial "icons/ionicons" (dict "logoname" "star-outline" "size" 5) }}
-      </span>
-      <!--  prettier-ignore  -->
-      {{ len $likes }} Like{{ if gt (len $likes) 1 }}s{{ end }}
-    </div>
-  {{ end }}
-  {{ if $mentions }}
-    <div class="m-1 text-gray-500 text-sm">
-      <span class="font-bold">
-        {{ partial "icons/ionicons" (dict "logoname" "document-outline" "size" 5) }}
-      </span>
-      <!--  prettier-ignore  -->
-      {{ len $reposts }} Mention{{ if gt (len $mentions) 1 }}s{{ end }}
-    </div>
-  {{ end }}
-</div>
+  <div class="flex">
+    {{ if $replies }}
+      <div class="m-1 text-gray-500 text-sm">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "chatbubbles-outline" "size" 5) }}
+        </span>
+        <!--  prettier-ignore  -->
+        {{ len $replies }} Response{{ if gt (len $replies) 1 }}s{{ end }}
+      </div>
+    {{ end }}
+    {{ if $reposts }}
+      <div class="m-1 text-gray-500 text-sm">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "repeat-outline" "size" 5) }}
+        </span>
+        <!--  prettier-ignore  -->
+        {{ len $reposts }} Repost{{ if gt (len $reposts) 1 }}s{{ end }}
+      </div>
+    {{ end }}
+    {{ if $likes }}
+      <div class="m-1 text-gray-500 text-sm">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "star-outline" "size" 5) }}
+        </span>
+        <!--  prettier-ignore  -->
+        {{ len $likes }} Like{{ if gt (len $likes) 1 }}s{{ end }}
+      </div>
+    {{ end }}
+    {{ if $mentions }}
+      <div class="m-1 text-gray-500 text-sm">
+        <span class="font-bold">
+          {{ partial "icons/ionicons" (dict "logoname" "document-outline" "size" 5) }}
+        </span>
+        <!--  prettier-ignore  -->
+        {{ len $reposts }} Mention{{ if gt (len $mentions) 1 }}s{{ end }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
