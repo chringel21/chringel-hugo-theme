@@ -1201,7 +1201,7 @@ body .icon-parent::before {
 .prose :where(a):not(:where([class~="not-prose"] *)){
   color: #16a34a;
   text-decoration: underline;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)):hover{
