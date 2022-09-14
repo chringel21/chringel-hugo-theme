@@ -67,10 +67,10 @@ module.exports = {
               fontWeight: "300",
             },
             a: {
-              fontWeight: "300",
-              color: theme("colors.accent.500"),
+              fontWeight: "500",
+              color: theme("colors.accent.600"),
               "&:hover": {
-                color: theme("colors.accent.700"),
+                color: theme("colors.accent.800"),
               },
             },
           },

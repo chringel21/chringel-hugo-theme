@@ -1199,13 +1199,13 @@ body .icon-parent::before {
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)){
-  color: #22c55e;
+  color: #16a34a;
   text-decoration: underline;
   font-weight: 300;
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)):hover{
-  color: #15803d;
+  color: #166534;
 }
 
 .prose :where(strong):not(:where([class~="not-prose"] *)){
