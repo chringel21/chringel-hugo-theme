@@ -51,6 +51,16 @@
                 </a>
               </span>
             {{ end }}
+            {{ if (isset .Params "quote") }}
+              <span class="p-summary"
+                >📜 Quoted
+                <cite class="h-cite u-quotation-of">
+                  <a href="{{ .Params.quote.url }}" class="u-url break-all">
+                    {{ .Params.quote.url }}
+                  </a>
+                </cite>
+              </span>
+            {{ end }}
             {{/* h-entry */}}
             {{ with .Content }}
               <div class="e-content">

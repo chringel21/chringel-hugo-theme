@@ -58,6 +58,9 @@
           {{ if .Params.repost }}
             <a href="{{ .Params.repost.url }}" class="u-repost-of break-all"></a>
           {{ end }}
+          {{ if .Params.quote }}
+            <cite class="h-cite u-quotation-of"><a href="{{ .Params.quote.url }}" class="u-url break-all"></a></cite>
+          {{ end }}
           {{ if .Params.bridgy }}
             {{ range .Params.bridgy }}
               <a href="https://brid.gy/publish/{{ . }}"></a>
