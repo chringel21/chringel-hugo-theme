@@ -54,18 +54,25 @@
             {{ if (isset .Params "quote") }}
               <span class="p-summary"
                 >📜 Quoted
-                <cite class="h-cite u-quotation-of">
-                  <a href="{{ .Params.quote.url }}" class="u-url break-all">
+                <blockquote class="h-cite u-quotation-of">
+                  <a href="{{ .Params.quote.url }}" class="u-url">
                     {{ .Params.quote.url }}
                   </a>
-                </cite>
+                </blockquote>
+                {{ with .Content }}
+                  <div class="e-content">
+                    {{ . }}
+                  </div>
+                {{ end }}
               </span>
             {{ end }}
             {{/* h-entry */}}
-            {{ with .Content }}
-              <div class="e-content">
-                {{ . }}
-              </div>
+            {{ if ne (isset .Params "quote") true }}
+              {{ with .Content }}
+                <div class="e-content">
+                  {{ . }}
+                </div>
+              {{ end }}
             {{ end }}
             {{ if (isset .Params "bridgy") }}
               {{ range .Params.bridgy }}
