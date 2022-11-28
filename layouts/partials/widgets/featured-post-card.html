@@ -3,12 +3,24 @@
   <div
     class="grid gap-0 md:grid-cols-3 grid-cols-1 bg-white dark:bg-gray-600 shadow-sm border-2 border-gray-200 rounded-lg mb-5 hover:shadow-xl transition-shadow"
   >
-    {{ if (isset .Params "cover") }}
+    {{ if and (isset .Params "cover") (not (in .Params.cover.src "http")) }}
       {{ $image := .Resources.GetMatch .Params.cover.src }}
       <div class="md:col-span-2 col-span-1">
         <a href="{{ $permalink }}" aria-label="{{ .Title }}">
           <img
             src="{{ ($image.Fill "750x318 webp q100").RelPermalink }}"
+            width="750"
+            height="318"
+            alt="{{ cond (isset .Params.cover "caption") .Params.cover.caption .Title }}"
+            class="rounded-t-lg md:h-full md:rounded-bl-lg md:rounded-tl-lg md:rounded-tr-none object-cover"
+          />
+        </a>
+      </div>
+    {{ else if (in .Params.cover.src "http") }}
+      <div class="md:col-span-2 col-span-1">
+        <a href="{{ $permalink }}" aria-label="{{ .Title }}">
+          <img
+            src="{{ .Params.cover.src }}"
             width="750"
             height="318"
             alt="{{ cond (isset .Params.cover "caption") .Params.cover.caption .Title }}"

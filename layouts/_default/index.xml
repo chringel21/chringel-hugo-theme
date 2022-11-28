@@ -42,10 +42,14 @@
       {{ $content = replaceRE `a href="/(.*?)"` (printf "%s%s%s" "a href=\"" $baseurl "$1\"") $content }}
       <description>
           {{ `<![CDATA[ ` | safeHTML }}
-          {{ if .Params.cover }}
+          {{ if and (.Params.cover) (not (in .Params.cover.src "http")) }}
           {{ $image := .Resources.GetMatch .Params.cover.src }}
             <p>
               <img align="left" hspace="5" src="{{ ($image.Resize "x550 webp q100").RelPermalink }}"/>
+            </p>
+          {{ else if (in .Params.cover.src "http") }}
+            <p>
+              <img align="left" hspace="5" src="{{ .Params.cover.src }}"/>
             </p>
           {{ end }}
           {{ $content | safeHTML }}

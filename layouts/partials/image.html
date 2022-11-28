@@ -1,13 +1,19 @@
+{{ $alt := .Title | default .Text }}
 {{ if in .Destination "http" }}
-  <img
-    alt="{{ .Title | default .Text }}"
-    title="{{ .Title | default .Text }}"
-    src="{{ .Destination }}"
-    loading="lazy"
-  />
+  <figure>
+    <img
+      alt="{{ $alt }}"
+      title="{{ $alt }}"
+      src="{{ .Destination }}"
+      loading="lazy"
+    />
+  </figure>
+  <figcaption class="text-sm italic">
+    {{ $alt | $.Page.RenderString }}
+  </figcaption>
 {{ else }}
   {{ $image := .Page.Resources.GetMatch .Destination }}
-  {{ $alt := .Title | default .Text }}
+  {{ $alt | $.Page.RenderString }}
 
   {{ $tinyw := default "500x webp" }}
   {{ $smallw := default "800x webp" }}
