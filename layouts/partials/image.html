@@ -13,7 +13,7 @@
   </figcaption>
 {{ else }}
   {{ $image := .Page.Resources.GetMatch .Destination }}
-  {{ $alt | $.Page.RenderString }}
+  {{ $alt := $alt | $.Page.RenderString }}
 
   {{ $tinyw := default "500x webp" }}
   {{ $smallw := default "800x webp" }}
